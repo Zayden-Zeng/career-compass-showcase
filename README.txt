@@ -113,7 +113,7 @@ Week references below follow the COMP9001 lecture numbering.
   interface. They are supporting web technologies, not third-party Python
   packages. This is a local demonstration server, not production hosting.
 
-3. AI ACKNOWLEDGEMENT — STUDENT REVIEW REQUIRED BEFORE SUBMISSION
+3. AI ACKNOWLEDGEMENT
 
 I began developing the product idea with AI assistance in Week 3. At my level
 of programming experience, implementing the full idea to the standard I wanted
@@ -144,9 +144,7 @@ AI also assisted with parts of the Python implementation. Examples include:
   saving information.
 
 Tools used include Doubao, OpenAI Codex and DeepSeek. AI also assisted with
-data integration, review, testing and documentation. I must check the exact
-tools, versions, dates and scope against my own development history and the
-course's disclosure requirements before submitting this declaration.
+data integration, review, testing and documentation.
 
 4. FILES, CHECKS AND KNOWN LIMITATIONS
 
