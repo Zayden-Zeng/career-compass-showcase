@@ -1,5 +1,7 @@
 # Career Compass
 
+**English** | [中文](README.zh-CN.md)
+
 **Explore Shanghai careers through places, skills and university courses.**
 
 Career Compass helps computing students discover where employers are located, explore recorded technology roles and see how selected courses relate to skills in those roles. A Python program powers the data and matching, with a terminal interface and an interactive browser experience.
