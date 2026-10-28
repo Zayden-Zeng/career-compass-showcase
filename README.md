@@ -4,7 +4,19 @@
 
 **Explore Shanghai careers through places, skills and university courses.**
 
-Career Compass helps computing students discover where employers are located, explore recorded technology roles and see how selected courses relate to skills in those roles. A Python program powers the data and matching, with a terminal interface and an interactive browser experience.
+Career Compass helps computing students explore the connection between university study and potential careers in Shanghai. It brings company locations, recorded technology roles, skills and course information into one place, with an interactive browser map and a Python terminal interface.
+
+### The problem
+
+Students may know which courses they have studied but find it difficult to understand how those courses relate to the skills mentioned in real job descriptions. Recruitment information is scattered across company websites, and it can also be hard to see where different employers are located or compare opportunities by area. Career Compass brings these pieces together as a starting point for exploration, rather than treating a course match as proof of job readiness.
+
+### Why Shanghai?
+
+Shanghai is one of China's most developed cities, with a wide range of industries and major employers that may offer opportunities for computing graduates. Its international connections and diverse business community make it a useful city to explore for international students and Chinese students returning from overseas. Individual opportunities, eligibility and experiences vary.
+
+### How it helps
+
+Start with the map to discover companies and their recorded roles by location, or start with courses to explore roles connected through documented skill mappings. Role details include source links where available, so users can check the original information. The Python analysis also helps compare a user's self-reported skills with those recorded for a role and suggests related courses.
 
 ![Career Compass welcome screen](screenshots/Screenshots-Welcome.png)
 
