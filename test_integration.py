@@ -8,6 +8,15 @@ import career_compass as core
 from server import analyse, course_matches, compute_stats
 
 class IntegrationTests(unittest.TestCase):
+    def test_displayed_role_locations_include_shanghai(self):
+        for company in core.DATA["companies"]:
+            for role in company["roles"]:
+                location = str(role.get("location", "")).lower()
+                self.assertTrue(
+                    any(name in location for name in ("上海", "shanghai", "شنغهاي")),
+                    f"{role.get('uid')} has no Shanghai location in the recorded data",
+                )
+
     def test_terminal_explore_save_and_reload_in_clean_directory(self):
         with tempfile.TemporaryDirectory() as folder:
             for name in ('career_compass.py', 'data.json'):

@@ -15,6 +15,7 @@ PROJECT FILES
 career_compass.py — main Python functionality and terminal interface.
 server.py — starts the local server and connects the web interface to Python.
 data.json — shared company, role, course and skill data.
+role-location-review.json — excluded role records retained for location review.
 README.txt — project description, instructions, concepts and AI disclosure.
 test_integration.py — automated checks for key project functions.
 audit_data.py — reads the dataset and reports data-quality information.

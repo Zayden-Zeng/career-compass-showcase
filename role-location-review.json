@@ -1,0 +1,199 @@
+{
+  "description": "Records excluded from Shanghai role display pending location review; retained for traceability.",
+  "records": [
+    {
+      "company_id": "bytedance",
+      "company_name": "字节跳动",
+      "reason": "location_not_shanghai",
+      "role": {
+        "title": {
+          "zh": "商家生态产品实习生 - 抖音电商",
+          "en": "Merchant Ecosystem Product Intern - Douyin E-commerce"
+        },
+        "description": {
+          "zh": "字节跳动/抖音集团官方校园招聘门户的在招岗位（职位 ID A104480A）；详情见官方页面。",
+          "en": "Open role on ByteDance/Douyin Group official campus portal (job ID A104480A); see the official page."
+        },
+        "skills": [
+          "Project Management",
+          "Data Analysis"
+        ],
+        "experience": {
+          "zh": "日常实习：面向全体在校生，3 个月及以上。",
+          "en": "Daily internship for enrolled students, 3+ months.",
+          "type": "intern"
+        },
+        "source_url": "https://jobs.bytedance.com/campus/position/7697200868952852741/detail",
+        "source_type": "official_job_detail",
+        "location": {
+          "zh": "北京",
+          "en": "Beijing"
+        },
+        "job_id": "A104480A",
+        "posted_date": "",
+        "status": "published_not_confirmed_open",
+        "verified_date": "2026-10-27",
+        "evidence_access": "official_live_page",
+        "verification_note": {
+          "zh": "通过官方页面搜索索引核对；实时正文未成功提取。",
+          "en": "Checked against the official page search index; live body not retrieved."
+        },
+        "id": "265aec2259",
+        "recorded_date": "2026-10-27",
+        "source": "official_job_detail",
+        "uid": "bytedance-265aec2259",
+        "skills_source": "title_inference",
+        "skills_note": {
+          "zh": "技能由岗位名称推断，非招聘原文提取。",
+          "en": "Skills inferred from the role title, not extracted from the posting."
+        }
+      }
+    },
+    {
+      "company_id": "bytedance",
+      "company_name": "字节跳动",
+      "reason": "location_not_shanghai",
+      "role": {
+        "title": {
+          "zh": "大模型运营实习生 - Data AML",
+          "en": "LLM Operations Intern - Data AML"
+        },
+        "description": {
+          "zh": "字节跳动/抖音集团官方校园招聘门户的在招岗位（职位 ID A55943）；详情见官方页面。",
+          "en": "Open role on ByteDance/Douyin Group official campus portal (job ID A55943); see the official page."
+        },
+        "skills": [
+          "LLM",
+          "Data Analysis",
+          "Python"
+        ],
+        "experience": {
+          "zh": "日常实习：面向全体在校生，3 个月及以上。",
+          "en": "Daily internship for enrolled students, 3+ months.",
+          "type": "intern"
+        },
+        "source_url": "https://jobs.bytedance.com/campus/position/7696054062689880325/detail",
+        "source_type": "official_job_detail",
+        "location": {
+          "zh": "北京",
+          "en": "Beijing"
+        },
+        "job_id": "A55943",
+        "posted_date": "",
+        "status": "published_not_confirmed_open",
+        "verified_date": "2026-10-27",
+        "evidence_access": "official_live_page",
+        "verification_note": {
+          "zh": "通过官方页面搜索索引核对；实时正文未成功提取。",
+          "en": "Checked against the official page search index; live body not retrieved."
+        },
+        "id": "0f659a414a",
+        "recorded_date": "2026-10-27",
+        "source": "official_job_detail",
+        "uid": "bytedance-0f659a414a",
+        "skills_source": "title_inference",
+        "skills_note": {
+          "zh": "技能由岗位名称推断，非招聘原文提取。",
+          "en": "Skills inferred from the role title, not extracted from the posting."
+        }
+      }
+    },
+    {
+      "company_id": "bytedance",
+      "company_name": "字节跳动",
+      "reason": "location_not_shanghai",
+      "role": {
+        "title": {
+          "zh": "Agent策略产品实习生 - 火山方舟",
+          "en": "Agent Strategy Product Intern - Volcengine Ark"
+        },
+        "description": {
+          "zh": "字节跳动/抖音集团官方校园招聘门户的在招岗位（职位 ID A04043B）；详情见官方页面。",
+          "en": "Open role on ByteDance/Douyin Group official campus portal (job ID A04043B); see the official page."
+        },
+        "skills": [
+          "AI Agents",
+          "LLM",
+          "Python"
+        ],
+        "experience": {
+          "zh": "日常实习：面向全体在校生，3 个月及以上。",
+          "en": "Daily internship for enrolled students, 3+ months.",
+          "type": "intern"
+        },
+        "source_url": "https://jobs.bytedance.com/campus/position/7694875950936623413/detail",
+        "source_type": "official_job_detail",
+        "location": {
+          "zh": "北京",
+          "en": "Beijing"
+        },
+        "job_id": "A04043B",
+        "posted_date": "",
+        "status": "published_not_confirmed_open",
+        "verified_date": "2026-10-27",
+        "evidence_access": "official_live_page",
+        "verification_note": {
+          "zh": "通过官方页面搜索索引核对；实时正文未成功提取。",
+          "en": "Checked against the official page search index; live body not retrieved."
+        },
+        "id": "6e65112ecc",
+        "recorded_date": "2026-10-27",
+        "source": "official_job_detail",
+        "uid": "bytedance-6e65112ecc",
+        "skills_source": "title_inference",
+        "skills_note": {
+          "zh": "技能由岗位名称推断，非招聘原文提取。",
+          "en": "Skills inferred from the role title, not extracted from the posting."
+        }
+      }
+    },
+    {
+      "company_id": "bytedance",
+      "company_name": "字节跳动",
+      "reason": "location_not_shanghai",
+      "role": {
+        "title": {
+          "zh": "财务实习生",
+          "en": "Finance Intern"
+        },
+        "description": {
+          "zh": "字节跳动/抖音集团官方校园招聘门户的在招岗位（职位 ID A218821A）；详情见官方页面。",
+          "en": "Open role on ByteDance/Douyin Group official campus portal (job ID A218821A); see the official page."
+        },
+        "skills": [
+          "Excel",
+          "Data Analysis"
+        ],
+        "experience": {
+          "zh": "日常实习：面向全体在校生，3 个月及以上。",
+          "en": "Daily internship for enrolled students, 3+ months.",
+          "type": "intern"
+        },
+        "source_url": "https://jobs.bytedance.com/campus/position/7566242994865916165/detail",
+        "source_type": "official_job_detail",
+        "location": {
+          "zh": "北京",
+          "en": "Beijing"
+        },
+        "job_id": "A218821A",
+        "posted_date": "",
+        "status": "published_not_confirmed_open",
+        "verified_date": "2026-10-27",
+        "evidence_access": "official_live_page",
+        "verification_note": {
+          "zh": "通过官方页面搜索索引核对；实时正文未成功提取。",
+          "en": "Checked against the official page search index; live body not retrieved."
+        },
+        "id": "7734ca260f",
+        "recorded_date": "2026-10-27",
+        "source": "official_job_detail",
+        "uid": "bytedance-7734ca260f",
+        "skills_source": "title_inference",
+        "skills_note": {
+          "zh": "技能由岗位名称推断，非招聘原文提取。",
+          "en": "Skills inferred from the role title, not extracted from the posting."
+        }
+      }
+    }
+  ]
+}

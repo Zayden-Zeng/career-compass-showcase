@@ -6,7 +6,7 @@
   const bankPreview=window.COMPASS_BANK_PREVIEW;
   for(const company of bankPreview?.companies||[]){
     const index=sourceData.companies.findIndex(c=>c.id===company.id);
-    if(index<0)sourceData.companies.push(company);else sourceData.companies[index]=company;
+    if(index>=0)sourceData.companies[index]={...company,roles:sourceData.companies[index].roles};
   }
   for(const company of sourceData.companies)for(const role of company.roles||[]){
     if(bankPreview?.translations?.[role.uid])role.title.en=bankPreview.translations[role.uid];
