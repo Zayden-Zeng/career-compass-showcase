@@ -170,7 +170,7 @@ Run checks: python3 -m unittest test_integration.py
 Validate data: python3 career_compass.py --validate
 Data report: python3 audit_data.py
 
-Eight integration tests passed during the review on 28 October 2026. This does
+Nine integration tests passed during the review on 29 October 2026. This does
 not establish that every visual interaction, source and vacancy was verified.
 A missing data.json currently prevents startup with a traceback. A valid JSON
 profile with incorrect field types may also cause a terminal error. Back up a
