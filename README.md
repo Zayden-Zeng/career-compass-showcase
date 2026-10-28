@@ -30,7 +30,11 @@ Browse the city map, choose a district and explore company locations and recorde
 
 ## Connect courses and careers
 
-Select courses to explore related roles and the skills connecting them. The six-direction course profile visualises breadth of course coverage, and milestones celebrate progress. Course coverage is not a measure of skill mastery or a guarantee of eligibility.
+Select courses to explore related roles and the skills connecting them. The six-direction course profile visualises course coverage; click a direction to filter its related courses.
+
+- **Milestones:** Every time the number of selected courses reaches a multiple of five (5, 10, 15 and so on), a brief milestone animation appears. Milestone 1 means five courses selected; Milestone 2 means ten.
+- **Hexagon Ranger:** Unlock the gold six-sided achievement when each of the six directions has at least three related selected courses. A course related to more than one direction contributes to each relevant direction, so this does not necessarily require 18 different courses. Unlocking counts related courses; it does not require three weighted points per direction. The course filter separately shows core relevance (+1) and supporting relevance (+0.5).
+- **What it means:** Both are course-exploration features. They describe selections and course relationships, not proven skills or eligibility.
 
 ![Courses, related roles and six-direction profile](screenshots/Screenshots-Course-Matching-Hexagon.png)
 ![Course milestone](screenshots/Screenshots-Course-Milestone.png)
