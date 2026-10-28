@@ -28,6 +28,11 @@ Browse the city map, choose a district and explore company locations and recorde
 ![Companies in Pudong](screenshots/Screenshots-Pudong-Map.png)
 ![Company galaxy](screenshots/Screenshots-Company-Galaxy.png)
 
+**Map legend:** Green identifies a company with recorded role details; blue identifies a company or careers entry without a recorded role; a mixed marker contains both. Numbers indicate grouped nearby companies at the current zoom level. The expanded galaxy shows the same status around each logo.
+
+![Map status legend](screenshots/Screenshots-Map-Legend.png)
+![Expanded company galaxy with status rings](screenshots/Screenshots-Galaxy-Legend.png)
+
 ## Browse districts, companies and roles
 
 Explore searchable directories of Shanghai districts, companies and recorded roles. Select an entry to continue exploring its information.

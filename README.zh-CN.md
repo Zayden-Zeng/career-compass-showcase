@@ -28,6 +28,11 @@ Career Compass 帮助计算机专业学生探索大学学习与上海潜在职�
 ![浦东企业](screenshots/Screenshots-Pudong-Map.png)
 ![企业星环](screenshots/Screenshots-Company-Galaxy.png)
 
+**地图图例：** 绿色表示有岗位详情记录的公司；蓝色表示尚无岗位记录、仅有公司或招聘入口的条目；混合颜色表示该组包含两种情况。数字表示当前缩放级别下聚合的附近公司数量，展开星环后，Logo 外圈也会显示对应状态。
+
+![地图状态图例](screenshots/Screenshots-Map-Legend.png)
+![带状态光圈的企业星环](screenshots/Screenshots-Galaxy-Legend.png)
+
 ## 浏览行政区、企业和岗位
 
 在可搜索的列表中浏览上海行政区、企业和已收录的岗位，选择条目继续查看相关信息。
