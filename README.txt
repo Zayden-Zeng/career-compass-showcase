@@ -2,10 +2,10 @@ CAREER COMPASS — FINAL PROJECT (DRAFT)
 
 ALTERNATIVE ACCESS FOR THE TUTOR
 
-The project is also being prepared for the public GitHub repository:
+The project is also available in the public GitHub repository:
 https://github.com/Zayden-Zeng/career-compass-showcase
-Once the files have been uploaded, the repository provides an additional way
-to view the source and download the complete project. Download and extract
+The repository provides an additional way to view the source and download
+the complete project. Download and extract
 the files, then follow the local run instructions below to open the browser
 interface. The repository link is supplementary to the Ed code submission;
 GitHub does not itself run the Python server.
