@@ -60,6 +60,12 @@ Career Compass 帮助计算机专业学生探索大学学习与上海潜在职�
 ![课程、相关岗位和六方向画像](screenshots/Screenshots-Course-Matching-Hexagon.png)
 ![课程里程碑](screenshots/Screenshots-Course-Milestone.png)
 
+## 收藏岗位
+
+在岗位详情中收藏感兴趣的岗位，之后可通过 **Saved roles（已收藏岗位）** 再次查看。收藏保存在当前浏览器中，不会自动同步到其他浏览器或设备。
+
+![尚未收藏岗位时的页面](screenshots/Screenshots-Saved-Roles.png)
+
 ## 发现滴水湖
 
 点击地图上的滴水湖，地图将聚焦到湖附近并播放烟花彩蛋。

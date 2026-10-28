@@ -60,6 +60,12 @@ Select courses to explore related roles and the skills connecting them. The six-
 ![Courses, related roles and six-direction profile](screenshots/Screenshots-Course-Matching-Hexagon.png)
 ![Course milestone](screenshots/Screenshots-Course-Milestone.png)
 
+## Save roles for later
+
+Save a role from its detail page and revisit it through **Saved roles**. Saved entries are stored locally in the current browser; they do not automatically sync to another browser or device.
+
+![Saved roles screen before saving a role](screenshots/Screenshots-Saved-Roles.png)
+
 ## Discover Dishui Lake
 
 Click Dishui Lake on the map to focus on the lake and enjoy the fireworks Easter egg.
