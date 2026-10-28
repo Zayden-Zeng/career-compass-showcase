@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><title>Career Compass — logo review</title>
+<style>body{margin:0;background:#eef2ed;font:12px system-ui;color:#243e32}h1{font-size:18px;margin:16px}#grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;padding:5px}.card{height:124px;background:white;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:5px;border:1px solid #d5ded5;border-radius:6px;overflow:hidden}.card img{width:100px;height:62px;object-fit:contain;padding:4px}.card strong{max-width:98%;text-align:center;font-size:11px}.card small{color:#67796b;font-size:10px}.card.pending{border-color:#c69755}</style>
+<style>body{max-width:1280px}#grid{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}</style>
+<h1>All company assets · review, not approval</h1><div id="grid"></div>
+<script src="/api/data.js"></script><script src="bank-preview.js?v=codex-preview-24"></script><script src="logos.js"></script><script src="logo-corrections.js?v=codex-preview-24"></script>
+<script src="logo-audit-v3.js?v=5"></script><script src="logo-circle-fixes.js?v=11"></script>
+<script>
+const byId=new Map(window.COMPASS_DATA.companies.map(c=>[c.id,c]));
+for(const company of window.COMPASS_BANK_PREVIEW?.companies||[])byId.set(company.id,company);
+const held=window.COMPASS_BANK_PREVIEW?.review?.excluded||{};
+const companies=[...byId.values()].filter(c=>!held[c.id]);
+for(const [index,company] of companies.entries()){
+ if(new URLSearchParams(location.search).has('regional')&&!window.COMPASS_BANK_PREVIEW.companies.some(c=>c.id===company.id))continue;
+ const asset=window.COMPASS_LOGOS[company.id]||{};
+ if(new URLSearchParams(location.search).has('remaining')&&!['xiaoi','amd','analog','weride','cadence','danfoss','kla','bambulab','tars','infinigence','astrazeneca','aumovio','intel'].includes(company.id))continue;
+ if(new URLSearchParams(location.search).has('corrected')&&!asset.src?.startsWith('assets/logos/reviewed/')&&company.id!=='titansci')continue;
+ const card=document.createElement('div');card.className='card'+(asset.mode==='generated'?' pending':'');card.dataset.company=company.id;
+ const pending=!asset.src||asset.mode==='generated'||asset.source==='generated monogram';
+ const image=document.createElement(pending?'span':'img');
+ if(pending)image.textContent='Verified artwork pending';
+ else{image.src=asset.src;image.alt=company.english;image.style.background=asset.background||asset.bg||'#fff'; image.style.width="76px";image.style.height="76px";image.style.padding="0";image.style.borderRadius=asset.mode==="solid"?"50%":"0";image.style.objectFit=asset.mode==="solid"?"cover":"contain";}
+ const name=document.createElement('strong');name.textContent=(index+1)+'. '+company.english;
+ const note=document.createElement('small');note.textContent=company.id+' · '+(asset.mode||'unknown');
+ card.append(image,name,note);document.getElementById('grid').append(card);
+}
+</script></html>

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f6f2">
+  <meta name="description" content="Explore Shanghai companies, roles and skills with Career Compass.">
+  <title>Career Compass</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2096%22%20fill%3D%22none%22%3E%3Crect%20x%3D%222%22%20y%3D%222%22%20width%3D%2292%22%20height%3D%2292%22%20rx%3D%2227%22%20fill%3D%22%23203d35%22%2F%3E%3Crect%20x%3D%223%22%20y%3D%223%22%20width%3D%2290%22%20height%3D%2290%22%20rx%3D%2226%22%20stroke%3D%22%23d5ee9c%22%20stroke-opacity%3D%22.16%22%2F%3E%3Ccircle%20cx%3D%2248%22%20cy%3D%2243%22%20r%3D%2227%22%20stroke%3D%22%23b2c992%22%20stroke-width%3D%221.6%22%2F%3E%3Cpath%20d%3D%22M48%2011v8M48%2067v8M16%2043h8M72%2043h8%22%20stroke%3D%22%23d5ee9c%22%20stroke-width%3D%222.4%22%20stroke-linecap%3D%22round%22%2F%3E%3Cg%20class%3D%22compass-needle%22%3E%3Cpath%20d%3D%22m61%2023-8%2025-19%2015%209-25Z%22%20fill%3D%22%23d5ee9c%22%2F%3E%3Cpath%20d%3D%22m53%2048-19%2015%209-25Z%22%20fill%3D%22%23efa88a%22%2F%3E%3Ccircle%20cx%3D%2248%22%20cy%3D%2243%22%20r%3D%223.5%22%20fill%3D%22%23fff8e9%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M24%2077h16l8%206%2012-6h12%22%20stroke%3D%22%239dba8b%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2224%22%20cy%3D%2277%22%20r%3D%222.5%22%20fill%3D%22%23d5ee9c%22%2F%3E%3Ccircle%20cx%3D%2272%22%20cy%3D%2277%22%20r%3D%222.5%22%20fill%3D%22%23efa88a%22%2F%3E%3Cpath%20d%3D%22m77%2015%201.4%204.6L83%2021l-4.6%201.4L77%2027l-1.4-4.6L71%2021l4.6-1.4Z%22%20fill%3D%22%23efa88a%22%2F%3E%3C%2Fsvg%3E">
+  <link rel="stylesheet" href="styles.css?v=codex-preview-83">
+  <script defer src="clustering.js?v=codex-preview-36"></script>
+  <script defer src="coordinates.js?v=codex-preview-25"></script>
+  <script defer src="main-rivers.js?v=codex-preview-1"></script>
+  <script defer src="neighbours.js"></script>
+  <script defer src="land-coast.js"></script>
+  <script defer src="osm-geo.js?v=codex-preview-7"></script>
+  <script defer src="shanghai-map.js?v=rounded-coast-2"></script>
+  <script defer src="donghai-bridge.js"></script>
+  <script defer src="/api/data.js"></script>
+  <script defer src="verified-locations.js?v=codex-preview-12"></script>
+  <script defer src="bank-preview.js?v=codex-preview-27"></script>
+  <script defer src="i18n.js?v=codex-preview-36"></script>
+  <script defer src="logos.js?v=codex-preview-1"></script>
+  <script defer src="logo-corrections.js?v=codex-preview-46"></script>
+  <script defer src="logo-audit-v3.js?v=5"></script>
+  <script defer src="logo-circle-fixes.js?v=11"></script>
+  <script defer src="app.js?v=codex-preview-83"></script>
+</head>
+<body>
+  <section id="welcome-screen" class="welcome-screen" role="main" aria-labelledby="welcome-title" lang="en" dir="ltr">
+    <img class="welcome-skyline-art" src="assets/shanghai-skyline-illustration-v1.png" alt="" aria-hidden="true">
+    <svg class="welcome-skyline" viewBox="0 0 1200 480" preserveAspectRatio="xMidYMax meet" aria-hidden="true" focusable="false">
+      <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+        <path class="skyline-ground" d="M0 440H1200M50 454h270m28 0h130m260 0h210m25 0h165"/>
+        <!-- Oriental Pearl: antenna, two spheres, and tripod legs. -->
+        <path d="M275 440 310 322M385 440 350 322M299 440 320 328M361 440 340 328M299 440h62M319 325V265M341 325V265M319 193V160M341 193V160M330 80V22M324 80h12M326 52h8"/>
+        <circle cx="330" cy="231" r="35"/><ellipse cx="330" cy="231" rx="35" ry="10"/><circle cx="330" cy="137" r="23"/><ellipse cx="330" cy="137" rx="23" ry="7"/>
+        <path d="M318 114V96h24v18M320 95V80h20v15M324 114l-5-10m18 10 5-10M297 247l-14 13m80-13 14 13"/>
+        <circle cx="330" cy="316" r="13"/><path d="M317 315h26M321 329v38m18-38v38"/>
+        <!-- Jin Mao Tower: pagoda-like stepped tiers and spire. -->
+        <path d="M444 440V272h8v-38h7v-36h7v-32h7v-30h8v-24h8V93h6V75h7V60h7V42h8V14h5v28h8v18h7v15h7v18h6v19h8v24h8v30h7v32h7v36h7v38h8v168zM468 166h96M459 198h114M452 234h128M444 272h144"/>
+        <path d="M482 112h68M475 136h82M490 93h52M499 75h34M507 60h18M456 272v168m12-174v174m12-190v190m12-200v200m12-210v210m12-210v210m12-210v210m12-200v200m12-190v190m12-174v174m12-168v168" opacity=".5"/>
+        <!-- Shanghai World Financial Center: tapered profile and trapezoidal opening. -->
+        <path d="M613 440 628 74h95l15 366zM646 90h59l-5 46h-49zM632 180h87M627 252h97M622 332h107M649 137 642 440M699 137l7 303"/>
+        <!-- Shanghai Tower: twisting taper and curved crown. -->
+        <path d="M764 440C768 375 773 292 778 218C782 158 788 102 799 64C808 31 820 18 831 12C840 27 847 48 851 78C858 128 859 194 860 250L864 440M778 218C800 211 834 211 858 224M774 293C797 282 835 282 861 298M770 365C797 353 837 354 863 371M799 64C818 70 839 87 852 108M786 137C811 142 839 157 857 175M780 206C810 211 840 226 860 246"/>
+        <path d="M105 440v-80h52v80m10 0v-119h55v119m10 0v-58h42v58m112 0v-86h44v86m447 0v-92h48v92m13 0V303h53v137m13 0v-66h47v66m12 0v-101h58v101" opacity=".65"/>
+      </g>
+    </svg>
+    <h1 id="welcome-title"><button id="enter-app" type="button" aria-label="Enter Career Compass"><span class="welcome-emblem"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none"><rect x="2" y="2" width="92" height="92" rx="27" fill="#203d35"/><rect x="3" y="3" width="90" height="90" rx="26" stroke="#d5ee9c" stroke-opacity=".16"/><circle cx="48" cy="43" r="27" stroke="#b2c992" stroke-width="1.6"/><path d="M48 11v8M48 67v8M16 43h8M72 43h8" stroke="#d5ee9c" stroke-width="2.4" stroke-linecap="round"/><g class="compass-needle"><path d="m61 23-8 25-19 15 9-25Z" fill="#d5ee9c"/><path d="m53 48-19 15 9-25Z" fill="#efa88a"/><circle cx="48" cy="43" r="3.5" fill="#fff8e9"/></g><path d="M24 77h16l8 6 12-6h12" stroke="#9dba8b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="77" r="2.5" fill="#d5ee9c"/><circle cx="72" cy="77" r="2.5" fill="#efa88a"/><path d="m77 15 1.4 4.6L83 21l-4.6 1.4L77 27l-1.4-4.6L71 21l4.6-1.4Z" fill="#efa88a"/></svg></span><span class="welcome-wordmark">Career Compass</span><span class="welcome-cue" aria-hidden="true">FIND YOUR DIRECTION <span>↗</span></span></button></h1>
+  </section>
+  <div id="app-shell" hidden>
+  <header class="site-header">
+    <div class="header-inner">
+    <a class="brand" href="./index.html" aria-label="Career Compass home">
+      <span class="brand-icon"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none"><rect x="2" y="2" width="92" height="92" rx="27" fill="#203d35"/><rect x="3" y="3" width="90" height="90" rx="26" stroke="#d5ee9c" stroke-opacity=".16"/><circle cx="48" cy="43" r="27" stroke="#b2c992" stroke-width="1.6"/><path d="M48 11v8M48 67v8M16 43h8M72 43h8" stroke="#d5ee9c" stroke-width="2.4" stroke-linecap="round"/><g class="compass-needle"><path d="m61 23-8 25-19 15 9-25Z" fill="#d5ee9c"/><path d="m53 48-19 15 9-25Z" fill="#efa88a"/><circle cx="48" cy="43" r="3.5" fill="#fff8e9"/></g><path d="M24 77h16l8 6 12-6h12" stroke="#9dba8b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="77" r="2.5" fill="#d5ee9c"/><circle cx="72" cy="77" r="2.5" fill="#efa88a"/><path d="m77 15 1.4 4.6L83 21l-4.6 1.4L77 27l-1.4-4.6L71 21l4.6-1.4Z" fill="#efa88a"/></svg></span>
+      <span class="brand-copy"><span class="brand-name">Career Compass</span><small class="brand-tagline">通江达海，中国上海</small></span>
+    </a>
+    <nav aria-label="主导航">
+      <button class="nav-item active" id="nav-explore">地图探索</button>
+      <button class="nav-item" id="nav-saved"><span class="nav-label">我的收藏</span> <span id="saved-count">0</span></button>
+      <button class="nav-item" id="nav-about"><span class="nav-label">关于项目</span> <span aria-hidden="true">↗</span></button>
+    </nav>
+    <div class="header-actions"><div id="language-switch" class="language-switch" role="group" aria-label="切换语言"><button type="button" data-language="zh" lang="zh-CN" aria-pressed="true">中文</button><button type="button" data-language="en" lang="en" aria-pressed="false">English</button><button type="button" data-language="ar" lang="ar-JO" dir="rtl" aria-pressed="false">العربية</button></div><span class="prototype-badge"><i></i><span>交互原型</span></span></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <div><p class="eyebrow"><span></span> EXPLORE YOUR NEXT CHAPTER</p>
+        <h1 id="page-title" tabindex="-1">你的下一站，<span>从上海出发。</span></h1>
+        <p class="intro-copy">从一座城到一份职业。沿着地图，发现适合你的公司、岗位与技能方向。</p>
+      </div>
+      <div class="intro-stats" aria-label="项目数据规模"><button type="button" class="stat-button" data-catalog-kind="districts" aria-haspopup="dialog"><strong>16<em>districts</em></strong><span>A city of possibilities</span></button><button type="button" class="stat-button" data-catalog-kind="companies" aria-haspopup="dialog"><strong>32<em>companies</em></strong><span>Companies in this project</span></button><button type="button" class="stat-button" data-catalog-kind="roles" aria-haspopup="dialog"><strong>98<em>roles</em></strong><span>Roles to explore</span></button></div>
+    </section>
+
+    <section class="toolbar" aria-label="探索筛选">
+      <label class="search-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><input id="search" type="search" placeholder="搜索公司、岗位或技能，如 Python" aria-label="搜索公司、岗位或技能" autocomplete="off"><span class="search-hint">探索你的兴趣</span></label>
+      <label class="select-wrap"><span>行业</span><select id="category" aria-label="筛选行业"><option value="all">全部行业</option></select></label>
+      <label class="select-wrap"><span>区域</span><select id="district-select" aria-label="选择上海区域"><option value="">上海全城</option></select></label>
+      <button class="toggle-intern" id="intern-only" aria-pressed="false" title="只看实习/校招岗位">只看实习/校招</button>
+      <button class="reset-filters" id="clear-filters" title="重置地图和筛选">↺ <span>重置</span></button>
+    </section>
+
+    <section class="explorer" aria-label="上海职业地图">
+      <div class="map-card">
+        <div class="map-topline"><div class="map-breadcrumb"><button id="breadcrumb-home">上海全城</button><span id="breadcrumb-detail"></span></div><span class="live-label"><i></i> 点击区域，开始探索</span></div>
+        <div class="map-stage" id="map-stage">
+          <div class="map-watermark" aria-hidden="true"><span>SHANGHAI</span><small>31° N / 121° E</small></div>
+          <svg id="city-map" viewBox="0 0 1000 760" aria-label="上海16个区交互地图" role="group">
+            <defs>
+              <filter id="district-shadow" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#214d42" flood-opacity=".2"/></filter>
+              <linearGradient id="land-grad" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#f4f9ef"/><stop offset="0.55" stop-color="#edf4e5"/><stop offset="1" stop-color="#e3eedb"/></linearGradient>
+              <linearGradient id="district-grad" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0" stop-color="#eaf1e2"/><stop offset="0.6" stop-color="#dfe9d6"/><stop offset="1" stop-color="#d3e1c8"/></linearGradient>
+              <linearGradient id="district-grad-data" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0" stop-color="#d8e6ca"/><stop offset="0.6" stop-color="#c8dcb8"/><stop offset="1" stop-color="#b7d0a4"/></linearGradient>
+              <linearGradient id="district-grad-hover" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0" stop-color="#bfd8ae"/><stop offset="0.6" stop-color="#abd09a"/><stop offset="1" stop-color="#93c184"/></linearGradient>
+              <linearGradient id="river-grad" x1="0" y1="0" x2="1" y2="0.3"><stop offset="0" stop-color="#a9c9d6"/><stop offset="0.5" stop-color="#8fb8ca"/><stop offset="1" stop-color="#a9c9d6"/></linearGradient>
+              <linearGradient id="lake-grad" x1="0" y1="0" x2="0.3" y2="1"><stop offset="0" stop-color="#c3e0e8"/><stop offset="1" stop-color="#a3cdd9"/></linearGradient>
+              <radialGradient id="beacon-glow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#86a86f" stop-opacity=".55"/><stop offset="1" stop-color="#86a86f" stop-opacity="0"/></radialGradient>
+              <pattern id="contour-lines" width="72" height="72" patternUnits="userSpaceOnUse" patternTransform="rotate(12)"><path d="M0 18 Q18 8 36 18 T72 18 M0 42 Q18 32 36 42 T72 42 M0 66 Q18 56 36 66 T72 66" fill="none" stroke="#c4d6b4" stroke-width="0.7" stroke-opacity="0.22"/></pattern>
+              <filter id="coast-soft" x="-8%" y="-8%" width="116%" height="116%"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#5b7d5f" flood-opacity="0.18"/></filter>
+              <radialGradient id="star-halo" cx="0.5" cy="0.42" r="0.62"><stop offset="0" stop-color="#f8ffe8" stop-opacity=".95"/><stop offset="0.45" stop-color="#c3e4ab" stop-opacity=".5"/><stop offset="1" stop-color="#8fc47d" stop-opacity="0"/></radialGradient>
+              <linearGradient id="star-cone" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#a8d18d" stop-opacity="0"/><stop offset="0.55" stop-color="#a8d18d" stop-opacity=".18"/><stop offset="1" stop-color="#c8e8a8" stop-opacity=".55"/></linearGradient><linearGradient id="star-beam" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#8fb87c" stop-opacity=".04"/><stop offset="1" stop-color="#a8d18d" stop-opacity=".5"/></linearGradient>
+            </defs>
+            <g id="district-layer"></g><g id="lingang-layer"></g><g id="lake-layer"></g><g id="label-layer" aria-hidden="true"></g><g id="marker-layer"></g>
+          </svg>
+          <div class="map-tooltip" id="map-tooltip" role="status" hidden></div>
+          <div class="map-north" aria-hidden="true"><span>N</span><svg viewBox="0 0 24 36"><path d="M12 2 3 29l9-6 9 6Z"/></svg></div>
+          <div class="map-controls"><button id="zoom-in" aria-label="放大地图" title="放大">+</button><button id="zoom-out" aria-label="缩小地图" title="缩小">−</button><button id="reset-map" aria-label="返回上海全城" title="返回全城"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4H4v4m12-4h4v4M4 16v4h4m12-4v4h-4M8 12h8m-4-4v8"/></svg></button></div>
+          <div class="map-caption"><span class="caption-dot"></span><span id="map-hint">悬停查看区名 · 点击放大区域</span></div>
+                <!-- Lingang planning legend removed -->
+
+          <div class="water-label" aria-hidden="true">东 海 / EAST CHINA SEA</div>
+        </div>
+        <div class="district-shortcuts" id="district-shortcuts" aria-label="有岗位数据的区域"></div>
+        <div class="map-footer"><span>公司使用品牌 Logo；点位为区域示意，非办公地址</span><a href="https://geo.datav.aliyun.com/areas_v3/bound/310000_full.json" target="_blank" rel="noopener noreferrer">地图边界 · DataV ↗</a><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">Map details © OpenStreetMap</a></div>
+      </div>
+
+      <aside class="results-panel" aria-label="公司与岗位信息"><div id="results-content"></div></aside>
+    </section>
+    <section class="bottom-bar"><div class="legend" id="industry-legend" aria-label="行业图标图例"></div><span>从兴趣出发，让方向逐渐清晰 <span aria-hidden="true">↗</span></span></section>
+    <footer class="site-footer"><span>CAREER COMPASS <b>／</b> 城市 · 职业 · 学习</span><span>来源核查截至 2026-10-23；各岗位的招聘状态见详情。</span></footer>
+  </main>
+  <dialog id="detail-dialog" aria-labelledby="dialog-title"><div id="dialog-content"></div></dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+  </div>
+</body>
+</html>

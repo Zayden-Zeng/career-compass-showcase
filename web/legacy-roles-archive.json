@@ -1,0 +1,786 @@
+{
+  "archived_date": "2026-10-23",
+  "companies": [
+    {
+      "id": "bilibili",
+      "name": "哔哩哔哩",
+      "english": "bilibili",
+      "category": "content",
+      "area": "杨浦滨江",
+      "district": "杨浦区",
+      "roles": [
+        {
+          "id": 1,
+          "title": {
+            "zh": "数据分析师（内容生态）",
+            "en": "Data Analyst (Content Ecosystem)"
+          },
+          "description": {
+            "zh": "哔哩哔哩总部（杨浦滨江）：深度参与UP主生态策略，负责指标体系设计、数据监控、异动归因、实验分析。",
+            "en": "Bilibili HQ (Yangpu Riverside): supports UP-creator ecosystem strategy through metric design, data monitoring, anomaly attribution and experiment analysis."
+          },
+          "skills": [
+            "SQL",
+            "Excel",
+            "Tableau",
+            "Statistics"
+          ],
+          "experience": {
+            "type": "intern",
+            "zh": "实习岗位（28届起在读，一周5天）；另有3-5年社招岗（15-25K·15薪）。",
+            "en": "Internship (current students, 5 days/week); experienced openings also exist (3-5 yrs, 15-25K x15)."
+          },
+          "source": "https://jobs.bilibili.com/campus/positions/18501 (checked 2026-09-15)",
+          "uid": "bilibili-1",
+          "source_url": "https://jobs.bilibili.com/campus/positions/18501",
+          "recorded_date": "2026-09-15"
+        }
+      ]
+    },
+    {
+      "id": "bytedance",
+      "name": "字节跳动",
+      "english": "ByteDance",
+      "category": "content",
+      "area": "新江湾 · 项目记录",
+      "district": "杨浦区",
+      "roles": [
+        {
+          "id": 2,
+          "title": {
+            "zh": "数据分析师（用户增长）",
+            "en": "Data Analyst (User Growth)"
+          },
+          "description": {
+            "zh": "字节跳动上海（抖音新江湾广场）：深度参与短视频平台增长，负责用户增长数据化运营体系、增长模型与指标看板，设计AB实验。",
+            "en": "ByteDance Shanghai: platform growth through data-driven operating systems, growth models and dashboards, running AB experiments."
+          },
+          "skills": [
+            "SQL",
+            "Python",
+            "Hive",
+            "Statistics",
+            "Tableau"
+          ],
+          "experience": {
+            "type": "experienced",
+            "zh": "社招岗位，通常要求3-5年数据分析经验；实习岗要求精通SQL并熟练Python。",
+            "en": "Experienced role (typically 3-5 yrs); internship openings require strong SQL and Python."
+          },
+          "source": "https://jobs.bytedance.com (checked 2026-09-15)",
+          "uid": "bytedance-2",
+          "source_url": "https://jobs.bytedance.com",
+          "recorded_date": "2026-09-15"
+        }
+      ]
+    },
+    {
+      "id": "trip",
+      "name": "携程集团",
+      "english": "Trip.com",
+      "category": "commerce",
+      "area": "杨浦区 · 项目归类",
+      "district": "杨浦区",
+      "roles": [
+        {
+          "id": 3,
+          "title": {
+            "zh": "数据分析师（技术方向）",
+            "en": "Data Analyst (Technical)"
+          },
+          "description": {
+            "zh": "携程2027届校招：构建多维度数据分析体系，挖掘用户行为增长点；搭建AB实验与因果推断框架。",
+            "en": "Ctrip 2027 campus: builds multi-dimensional analytics, mines user behaviour for growth, designs AB-testing frameworks."
+          },
+          "skills": [
+            "SQL",
+            "Python",
+            "Statistics",
+            "Machine Learning",
+            "Hive",
+            "Spark"
+          ],
+          "experience": {
+            "type": "graduate",
+            "zh": "2027届秋招（本硕博，毕业时间2026年9月-2027年8月），10-30K·15薪。",
+            "en": "2027 campus (Bachelor/Master/PhD, graduating Sep 2026 - Aug 2027), 10-30K x15."
+          },
+          "source": "https://m.liepin.com/lptjob/85222011/ (checked 2026-09-15)",
+          "uid": "trip-3",
+          "source_url": "https://m.liepin.com/lptjob/85222011/",
+          "recorded_date": "2026-09-15"
+        }
+      ]
+    },
+    {
+      "id": "meituan",
+      "name": "美团",
+      "english": "Meituan",
+      "category": "commerce",
+      "area": "杨浦滨江 · 项目记录",
+      "district": "杨浦区",
+      "roles": [
+        {
+          "id": 4,
+          "title": {
+            "zh": "算法工程师（推荐）",
+            "en": "Algorithm Engineer (Recommendation)"
+          },
+          "description": {
+            "zh": "美团上海（杨浦滨江科技中心）：负责外卖/到店推荐算法，模型训练与上线，大规模排序系统。",
+            "en": "Meituan Shanghai (Yangpu Riverside): recommendation algorithms for food delivery and local services; model training and large-scale ranking systems."
+          },
+          "skills": [
+            "Python",
+            "Machine Learning",
+            "PyTorch",
+            "SQL",
+            "C++"
+          ],
+          "experience": {
+            "type": "graduate",
+            "zh": "2027届校招：计算机/算法相关硕士，熟悉机器学习和深度学习框架。",
+            "en": "2027 campus: CS/ML Master's; familiarity with ML and deep learning frameworks."
+          },
+          "source": "https://campus.meituan.com (checked 2026-10-17)",
+          "uid": "meituan-4",
+          "source_url": "https://campus.meituan.com",
+          "recorded_date": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "mihoyo",
+      "name": "米哈游",
+      "english": "HoYoverse",
+      "category": "gaming",
+      "area": "漕河泾 · 项目记录",
+      "district": "徐汇区",
+      "roles": [
+        {
+          "id": 1,
+          "title": {
+            "zh": "数据分析师（游戏方向）",
+            "en": "Data Analyst (Gaming)"
+          },
+          "description": {
+            "zh": "米哈游上海（漕河泾）：负责游戏运营数据分析，用户行为挖掘，量化分析与建模。",
+            "en": "HoYoverse Shanghai (Caohejing): game operations analytics, user-behaviour mining, quantitative analysis."
+          },
+          "skills": [
+            "SQL",
+            "Python",
+            "Statistics",
+            "Data Mining",
+            "Game Analytics"
+          ],
+          "experience": {
+            "type": "graduate",
+            "zh": "2027届校招：数学/统计/计算机相关专业，熟练SQL和Python，热爱游戏行业。",
+            "en": "2027 campus: Math/Stats/CS; strong SQL and Python; passion for gaming."
+          },
+          "source": "https://m.nowcoder.com (checked 2026-10-17)",
+          "uid": "mihoyo-1",
+          "source_url": "https://m.nowcoder.com",
+          "recorded_date": "2026-10-17"
+        },
+        {
+          "id": 2,
+          "title": {
+            "zh": "AI研发工程师（Agent方向）",
+            "en": "AI Engineer (Agent)"
+          },
+          "description": {
+            "zh": "米哈游上海：研究大语言模型Agent技术，游戏NPC智能体开发，Prompt工程与RAG。",
+            "en": "HoYoverse Shanghai: LLM Agent research, game NPC intelligence, prompt engineering and RAG."
+          },
+          "skills": [
+            "Python",
+            "Machine Learning",
+            "PyTorch",
+            "LLM",
+            "Data Structures"
+          ],
+          "experience": {
+            "type": "graduate",
+            "zh": "2027届校招：计算机相关专业本科及以上，扎实编程基础，了解大模型和Agent技术。",
+            "en": "2027 campus: CS Bachelor's+, strong coding, familiarity with LLMs and agents."
+          },
+          "source": "https://jobs.mihoyo.com (checked 2026-10-17)",
+          "uid": "mihoyo-2",
+          "source_url": "https://jobs.mihoyo.com",
+          "recorded_date": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "tencent",
+      "name": "腾讯",
+      "english": "Tencent",
+      "category": "gaming",
+      "area": "漕河泾 · 项目记录",
+      "district": "徐汇区",
+      "roles": [
+        {
+          "id": 3,
+          "title": {
+            "zh": "后端开发工程师",
+            "en": "Backend Software Engineer"
+          },
+          "description": {
+            "zh": "腾讯上海（漕河泾）：社交/游戏后端服务开发，高并发分布式系统，存储与中间件。",
+            "en": "Tencent Shanghai (Caohejing): backend services for social/gaming, high-concurrency distributed systems, storage and middleware."
+          },
+          "skills": [
+            "C++",
+            "Python",
+            "Data Structures",
+            "SQL",
+            "Linux",
+            "Git"
+          ],
+          "experience": {
+            "type": "graduate",
+            "zh": "2027届校招：计算机相关本科及以上，扎实数据结构算法，熟悉C++或Python。",
+            "en": "2027 campus: CS Bachelor's+, strong data structures; familiar with C++ or Python."
+          },
+          "source": "https://careers.tencent.com (checked 2026-10-17)",
+          "uid": "tencent-3",
+          "source_url": "https://careers.tencent.com",
+          "recorded_date": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "pdd",
+      "name": "拼多多",
+      "english": "PDD",
+      "category": "commerce",
+      "area": "陆家嘴 · 项目记录",
+      "district": "浦东新区",
+      "roles": [
+        {
+          "id": 1,
+          "title": {
+            "zh": "数据分析师",
+            "en": "Data Analyst"
+          },
+          "description": {
+            "zh": "拼多多上海（陆家嘴）：电商平台数据分析，用户增长，AB实验设计与落地。",
+            "en": "PDD Shanghai (Lujiazui): e-commerce analytics, user growth, AB-test design and execution."
+          },
+          "skills": [
+            "SQL",
+            "Python",
+            "Statistics",
+            "Hive",
+            "Spark",
+            "A/B testing"
+          ],
+          "experience": {
+            "type": "graduate",
+            "zh": "2027届校招：本科及以上，计算机/数学/统计相关专业，熟练SQL/Python。",
+            "en": "2027 campus: Bachelor's+, CS/Math/Stats; strong SQL/Python."
+          },
+          "source": "https://career.nankai.edu.cn (checked 2026-10-17)",
+          "uid": "pdd-1",
+          "source_url": "https://career.nankai.edu.cn",
+          "recorded_date": "2026-10-17"
+        },
+        {
+          "id": 2,
+          "title": {
+            "zh": "后端开发工程师",
+            "en": "Backend Software Engineer"
+          },
+          "description": {
+            "zh": "拼多多上海（陆家嘴）：电商平台后端服务开发，高并发系统设计，存储与中间件。",
+            "en": "PDD Shanghai (Lujiazui): backend services for e-commerce, high-concurrency system design."
+          },
+          "skills": [
+            "Python",
+            "Java",
+            "Data Structures",
+            "SQL",
+            "Linux",
+            "Git"
+          ],
+          "experience": {
+            "type": "graduate",
+            "zh": "2027届校招：本科及以上，扎实数据结构算法，精通至少一门开发语言。",
+            "en": "2027 campus: Bachelor's+, strong data structures; proficient in at least one language."
+          },
+          "source": "https://career.nankai.edu.cn (checked 2026-10-17)",
+          "uid": "pdd-2",
+          "source_url": "https://career.nankai.edu.cn",
+          "recorded_date": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "tesla",
+      "name": "特斯拉",
+      "english": "Tesla",
+      "category": "mobility",
+      "area": "临港 · 项目记录",
+      "district": "浦东新区",
+      "roles": [
+        {
+          "id": 3,
+          "title": {
+            "zh": "供应链数据分析师",
+            "en": "Data Analyst, Supply Chain"
+          },
+          "description": {
+            "zh": "特斯拉临港：负责供应链与需求计划数据分析，用SQL和Python处理大规模数据集。",
+            "en": "Tesla Lingang: supply-chain and demand-planning analytics with SQL and Python."
+          },
+          "skills": [
+            "SQL",
+            "Python"
+          ],
+          "experience": {
+            "type": "experienced",
+            "zh": "社招：量化相关专业+2年以上供应链分析经验。",
+            "en": "Experienced: quantitative degree plus 2+ yrs in supply-chain analytics."
+          },
+          "source": "https://www.tesla.com/careers (checked 2026-09-15)",
+          "uid": "tesla-3",
+          "source_url": "https://www.tesla.com/careers",
+          "recorded_date": "2026-09-15"
+        }
+      ]
+    },
+    {
+      "id": "nvidia",
+      "name": "英伟达",
+      "english": "NVIDIA",
+      "category": "chip",
+      "area": "张江 · 项目记录",
+      "district": "浦东新区",
+      "roles": [
+        {
+          "id": 4,
+          "title": {
+            "zh": "芯片软件工程师",
+            "en": "Chip Software Engineer"
+          },
+          "description": {
+            "zh": "英伟达上海（张江）：GPU计算软件驱动开发，CUDA性能优化，编译器工具链。",
+            "en": "NVIDIA Shanghai (Zhangjiang): GPU compute software drivers, CUDA performance optimisation, compiler toolchain."
+          },
+          "skills": [
+            "C++",
+            "Python",
+            "CUDA",
+            "Data Structures",
+            "Linux"
+          ],
+          "experience": {
+            "type": "graduate",
+            "zh": "2027届校招：计算机/电子相关硕士，扎实C++基础，了解GPU体系结构优先。",
+            "en": "2027 campus: CS/ECE Master's; strong C++; GPU architecture knowledge a plus."
+          },
+          "source": "https://nvidia.wd5.myworkdayjobs.com (checked 2026-10-17)",
+          "uid": "nvidia-4",
+          "source_url": "https://nvidia.wd5.myworkdayjobs.com",
+          "recorded_date": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "agibot",
+      "name": "智元机器人",
+      "english": "AGIBOT",
+      "category": "robotics",
+      "area": "浦东新区 · 项目归类",
+      "district": "浦东新区",
+      "roles": [
+        {
+          "id": 5,
+          "title": {
+            "zh": "机器人软件开发工程师",
+            "en": "Robot Software Engineer"
+          },
+          "description": {
+            "zh": "智元机器人上海：人形机器人运动控制与导航开发，ROS/ROS2，Python/C++。",
+            "en": "Agibot Shanghai: humanoid robot motion control and navigation; ROS/ROS2, Python/C++."
+          },
+          "skills": [
+            "Python",
+            "C++",
+            "ROS",
+            "Linux",
+            "Data Structures"
+          ],
+          "experience": {
+            "type": "graduate",
+            "zh": "2027届校招：计算机/自动化/机器人相关本科及以上，了解ROS优先。",
+            "en": "2027 campus: CS/automation/robotics Bachelor's+; ROS knowledge a plus."
+          },
+          "source": "https://agirobot.jobs.feishu.cn (checked 2026-10-17)",
+          "uid": "agibot-5",
+          "source_url": "https://agirobot.jobs.feishu.cn",
+          "recorded_date": "2026-10-17"
+        },
+        {
+          "id": 6,
+          "title": {
+            "zh": "AI训练与推理优化工程师",
+            "en": "AI Training & Inference Engineer"
+          },
+          "description": {
+            "zh": "智元机器人上海：大模型训练与推理优化，PyTorch分布式训练，CUDA/TensorRT/vLLM。",
+            "en": "Agibot Shanghai: LLM training and inference optimisation; PyTorch distributed, CUDA/TensorRT/vLLM."
+          },
+          "skills": [
+            "Python",
+            "PyTorch",
+            "Machine Learning",
+            "CUDA",
+            "Linux"
+          ],
+          "experience": {
+            "type": "graduate",
+            "zh": "2027届校招：计算机/AI相关本科及以上，熟练Python和C++，了解分布式训练。",
+            "en": "2027 campus: CS/AI Bachelor's+; strong Python and C++; familiarity with distributed training."
+          },
+          "source": "https://agirobot.jobs.feishu.cn (checked 2026-10-17)",
+          "uid": "agibot-6",
+          "source_url": "https://agirobot.jobs.feishu.cn",
+          "recorded_date": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "red",
+      "name": "小红书",
+      "english": "RED",
+      "category": "content",
+      "area": "马当路 · 项目记录",
+      "district": "黄浦区",
+      "roles": [
+        {
+          "id": 1,
+          "title": {
+            "zh": "数据分析师",
+            "en": "Data Analyst"
+          },
+          "description": {
+            "zh": "小红书上海（马当路SOHO复兴广场）：内容社区数据分析，构建指标体系，支持推荐策略和商业化决策。",
+            "en": "Xiaohongshu (Huangpu): content community analytics; builds metrics and supports recommendation strategy."
+          },
+          "skills": [
+            "SQL",
+            "Python",
+            "Statistics",
+            "A/B testing",
+            "Data Visualization"
+          ],
+          "experience": {
+            "type": "graduate",
+            "zh": "2027届校招：本科及以上，计算机/统计/数学相关专业，SQL和Python熟练。",
+            "en": "2027 campus: Bachelor's+, CS/Statistics/Math; strong SQL and Python."
+          },
+          "source": "https://career.buaa.edu.cn (checked 2026-10-17)",
+          "uid": "red-1",
+          "source_url": "https://career.buaa.edu.cn",
+          "recorded_date": "2026-10-17"
+        },
+        {
+          "id": 2,
+          "title": {
+            "zh": "产品经理",
+            "en": "Product Manager"
+          },
+          "description": {
+            "zh": "小红书上海：内容社区产品设计，需求分析，原型设计，数据驱动迭代。",
+            "en": "Xiaohongshu Shanghai: content community product design, requirements analysis, prototyping."
+          },
+          "skills": [
+            "SQL",
+            "Data Analysis",
+            "Prototyping",
+            "Communication",
+            "Project Management"
+          ],
+          "experience": {
+            "type": "graduate",
+            "zh": "2027届校招：本科及以上，逻辑清晰，需求分析和文档能力强。",
+            "en": "2027 campus: Bachelor's+, strong logic, requirements and documentation skills."
+          },
+          "source": "https://career.buaa.edu.cn (checked 2026-10-17)",
+          "uid": "red-2",
+          "source_url": "https://career.buaa.edu.cn",
+          "recorded_date": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "huawei",
+      "name": "华为",
+      "english": "HUAWEI",
+      "category": "telecom",
+      "area": "练秋湖 · 项目记录",
+      "district": "青浦区",
+      "roles": [
+        {
+          "id": 1,
+          "title": {
+            "zh": "算法工程师（终端AI）",
+            "en": "Algorithm Engineer (On-device AI)"
+          },
+          "description": {
+            "zh": "华为青浦练秋湖研发中心：手机/终端AI算法研发，模型轻量化部署，计算机视觉与NLP。",
+            "en": "Huawei Qingpu (Lianqiu Lake): on-device AI algorithm development for phones; model compression, CV and NLP."
+          },
+          "skills": [
+            "Python",
+            "C++",
+            "Machine Learning",
+            "PyTorch",
+            "Data Structures"
+          ],
+          "experience": {
+            "type": "graduate",
+            "zh": "2027届校招：计算机/AI相关硕士，扎实算法基础，熟悉深度学习框架。",
+            "en": "2027 campus: CS/AI Master's; strong algorithms; familiar with deep learning frameworks."
+          },
+          "source": "https://career.huawei.com (checked 2026-10-17)",
+          "uid": "huawei-1",
+          "source_url": "https://career.huawei.com",
+          "recorded_date": "2026-10-17"
+        },
+        {
+          "id": 2,
+          "title": {
+            "zh": "软件开发工程师（通信）",
+            "en": "Software Engineer (Telecom)"
+          },
+          "description": {
+            "zh": "华为青浦：5G/6G基站软件开发，分布式系统，高并发网络编程。",
+            "en": "Huawei Qingpu: 5G/6G baseband software, distributed systems, high-concurrency network programming."
+          },
+          "skills": [
+            "C++",
+            "Python",
+            "Data Structures",
+            "Linux",
+            "Networking"
+          ],
+          "experience": {
+            "type": "graduate",
+            "zh": "2027届校招：计算机/通信相关本科及以上，扎实C++和数据结构。",
+            "en": "2027 campus: CS/Telecom Bachelor's+; strong C++ and data structures."
+          },
+          "source": "https://career.huawei.com (checked 2026-10-17)",
+          "uid": "huawei-2",
+          "source_url": "https://career.huawei.com",
+          "recorded_date": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "microsoft",
+      "name": "微软",
+      "english": "Microsoft",
+      "category": "cloud",
+      "area": "紫竹园区 · 项目记录",
+      "district": "闵行区",
+      "roles": [
+        {
+          "id": 1,
+          "title": {
+            "zh": "软件开发工程师",
+            "en": "Software Development Engineer"
+          },
+          "description": {
+            "zh": "微软亚洲研究院（紫竹）：云服务平台开发，分布式系统，大规模数据处理。",
+            "en": "Microsoft Research Asia (Zizhu): cloud platform development, distributed systems, large-scale data processing."
+          },
+          "skills": [
+            "Python",
+            "C#",
+            "Data Structures",
+            "SQL",
+            "Azure",
+            "Git"
+          ],
+          "experience": {
+            "type": "graduate",
+            "zh": "2027届校招：计算机相关本科及以上，扎实编程基础，熟悉云平台优先。",
+            "en": "2027 campus: CS Bachelor's+, strong coding; cloud platform experience a plus."
+          },
+          "source": "https://careers.microsoft.com (checked 2026-10-17)",
+          "uid": "microsoft-1",
+          "source_url": "https://careers.microsoft.com",
+          "recorded_date": "2026-10-17"
+        }
+      ]
+    }
+  ],
+  "audit": [
+    {
+      "uid": "bilibili-1",
+      "title": "数据分析师（内容生态）",
+      "source_url": "https://jobs.bilibili.com/campus/positions/18501",
+      "decision": "inaccessible_detail",
+      "reason": "原具体URL18501本次返回空正文，无法复核职位、28届限制或薪资；不等于已关闭。新找到的LLM/视频评测岗位不是原岗位。",
+      "action": "archive_exclude_from_verified_count",
+      "verified_date": "2026-10-23"
+    },
+    {
+      "uid": "bytedance-2",
+      "title": "数据分析师（用户增长）",
+      "source_url": "https://jobs.bytedance.com",
+      "decision": "generic_official_portal",
+      "reason": "原来源是官方招聘主页，没有可对应的具体职位ID/详情，不能支持原岗位的毕业届别、资格及精确办公区。",
+      "action": "archive_exclude_from_verified_count",
+      "verified_date": "2026-10-23"
+    },
+    {
+      "uid": "trip-3",
+      "title": "数据分析师（技术方向）",
+      "source_url": "https://m.liepin.com/lptjob/85222011/",
+      "decision": "third_party_unverified",
+      "reason": "原链接是猎聘具体页，未获得公司官方对应岗位依据；2027校招、薪资及原杨浦地点未证实。",
+      "action": "archive_exclude_from_verified_count",
+      "verified_date": "2026-10-23"
+    },
+    {
+      "uid": "meituan-4",
+      "title": "算法工程师（推荐）",
+      "source_url": "https://campus.meituan.com",
+      "decision": "generic_official_portal",
+      "reason": "原来源是官方招聘主页，没有可对应的具体职位ID/详情，不能支持原岗位的毕业届别、资格及精确办公区。",
+      "action": "archive_exclude_from_verified_count",
+      "verified_date": "2026-10-23"
+    },
+    {
+      "uid": "mihoyo-1",
+      "title": "数据分析师（游戏方向）",
+      "source_url": "https://m.nowcoder.com",
+      "decision": "generic_third_party_portal",
+      "reason": "原来源仅牛客首页，不是具体招聘详情，无法支持岗位职责与2027校招要求。",
+      "action": "archive_exclude_from_verified_count",
+      "verified_date": "2026-10-23"
+    },
+    {
+      "uid": "mihoyo-2",
+      "title": "AI研发工程师（Agent方向）",
+      "source_url": "https://jobs.mihoyo.com",
+      "decision": "generic_official_portal",
+      "reason": "原来源是官方招聘主页，没有可对应的具体职位ID/详情，不能支持原岗位的毕业届别、资格及精确办公区。",
+      "action": "archive_exclude_from_verified_count",
+      "verified_date": "2026-10-23"
+    },
+    {
+      "uid": "tencent-3",
+      "title": "后端开发工程师",
+      "source_url": "https://careers.tencent.com",
+      "decision": "generic_official_portal",
+      "reason": "原来源是官方招聘主页，没有可对应的具体职位ID/详情，不能支持原岗位的毕业届别、资格及精确办公区。",
+      "action": "archive_exclude_from_verified_count",
+      "verified_date": "2026-10-23"
+    },
+    {
+      "uid": "pdd-1",
+      "title": "数据分析师",
+      "source_url": "https://career.nankai.edu.cn",
+      "decision": "generic_university_portal",
+      "reason": "原来源仅南开大学就业首页，无具体招聘公告/职位ID。",
+      "action": "archive_exclude_from_verified_count",
+      "verified_date": "2026-10-23"
+    },
+    {
+      "uid": "pdd-2",
+      "title": "后端开发工程师",
+      "source_url": "https://career.nankai.edu.cn",
+      "decision": "generic_university_portal",
+      "reason": "原来源仅南开大学就业首页，无具体招聘公告/职位ID。",
+      "action": "archive_exclude_from_verified_count",
+      "verified_date": "2026-10-23"
+    },
+    {
+      "uid": "tesla-3",
+      "title": "供应链数据分析师",
+      "source_url": "https://www.tesla.com/careers",
+      "decision": "generic_official_portal",
+      "reason": "原来源是官方招聘主页，没有可对应的具体职位ID/详情，不能支持原岗位的毕业届别、资格及精确办公区。",
+      "action": "archive_exclude_from_verified_count",
+      "verified_date": "2026-10-23"
+    },
+    {
+      "uid": "nvidia-4",
+      "title": "芯片软件工程师",
+      "source_url": "https://nvidia.wd5.myworkdayjobs.com",
+      "decision": "generic_official_portal",
+      "reason": "原来源是官方招聘主页，没有可对应的具体职位ID/详情，不能支持原岗位的毕业届别、资格及精确办公区。",
+      "action": "archive_exclude_from_verified_count",
+      "verified_date": "2026-10-23"
+    },
+    {
+      "uid": "agibot-5",
+      "title": "机器人软件开发工程师",
+      "source_url": "https://agirobot.jobs.feishu.cn",
+      "decision": "generic_official_portal",
+      "reason": "原来源是官方招聘主页，没有可对应的具体职位ID/详情，不能支持原岗位的毕业届别、资格及精确办公区。",
+      "action": "archive_exclude_from_verified_count",
+      "verified_date": "2026-10-23"
+    },
+    {
+      "uid": "agibot-6",
+      "title": "AI训练与推理优化工程师",
+      "source_url": "https://agirobot.jobs.feishu.cn",
+      "decision": "generic_official_portal",
+      "reason": "原来源是官方招聘主页，没有可对应的具体职位ID/详情，不能支持原岗位的毕业届别、资格及精确办公区。",
+      "action": "archive_exclude_from_verified_count",
+      "verified_date": "2026-10-23"
+    },
+    {
+      "uid": "red-1",
+      "title": "数据分析师",
+      "source_url": "https://career.buaa.edu.cn",
+      "decision": "generic_university_portal",
+      "reason": "原来源仅北航就业首页；找到官方2026春招数据分析记录，但不能验证原2027校招条目。",
+      "action": "archive_exclude_from_verified_count",
+      "verified_date": "2026-10-23"
+    },
+    {
+      "uid": "red-2",
+      "title": "产品经理",
+      "source_url": "https://career.buaa.edu.cn",
+      "decision": "generic_university_portal",
+      "reason": "原来源仅北航就业首页，没有对应产品经理详情。",
+      "action": "archive_exclude_from_verified_count",
+      "verified_date": "2026-10-23"
+    },
+    {
+      "uid": "huawei-1",
+      "title": "算法工程师（终端AI）",
+      "source_url": "https://career.huawei.com",
+      "decision": "generic_official_portal",
+      "reason": "原来源是官方招聘主页，没有可对应的具体职位ID/详情，不能支持原岗位的毕业届别、资格及精确办公区。",
+      "action": "archive_exclude_from_verified_count",
+      "verified_date": "2026-10-23"
+    },
+    {
+      "uid": "huawei-2",
+      "title": "软件开发工程师（通信）",
+      "source_url": "https://career.huawei.com",
+      "decision": "generic_official_portal",
+      "reason": "原来源是官方招聘主页，没有可对应的具体职位ID/详情，不能支持原岗位的毕业届别、资格及精确办公区。",
+      "action": "archive_exclude_from_verified_count",
+      "verified_date": "2026-10-23"
+    },
+    {
+      "uid": "microsoft-1",
+      "title": "软件开发工程师",
+      "source_url": "https://careers.microsoft.com",
+      "decision": "generic_official_portal",
+      "reason": "原来源仅微软招聘首页，无具体ID；紫竹与亚洲研究院为独立园区，原描述混同。",
+      "action": "archive_exclude_from_verified_count",
+      "verified_date": "2026-10-23"
+    }
+  ]
+}

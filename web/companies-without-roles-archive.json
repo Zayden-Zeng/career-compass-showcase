@@ -1,0 +1,465 @@
+{
+  "date": "2026-10-23",
+  "reason": "No sufficiently verified specific Shanghai role was added for these companies in this review. Exclusion does not mean the employer has no vacancies.",
+  "company_count": 18,
+  "companies": [
+    {
+      "id": "trip",
+      "name": "携程集团",
+      "english": "Trip.com",
+      "category": "commerce",
+      "district": "长宁区",
+      "area": "金钟路968号 · 企业据点",
+      "roles": [],
+      "verified_date": "2026-10-23",
+      "company_source_url": "https://open.trip.com/?locale=zh-CN",
+      "company_evidence": {
+        "zh": "携程官方开放平台明确上海市长宁区金钟路968号；纠正旧项目杨浦分类。",
+        "en": "Trip.com's official open platform specifies 968 Jinzhong Road, Changning District, Shanghai. This corrects the project's former Yangpu classification."
+      },
+      "careers_url": "https://careers.trip.com/",
+      "industry_detail": "commerce",
+      "website": "https://group.trip.com/",
+      "zones": [],
+      "area_i18n": {
+        "zh": "金钟路968号 · 企业据点",
+        "en": "968 Jinzhong Road - company base"
+      },
+      "arabic": "Trip.com"
+    },
+    {
+      "id": "tesla",
+      "name": "特斯拉",
+      "english": "Tesla",
+      "category": "mobility",
+      "district": "浦东新区",
+      "area": "临港 · 企业据点",
+      "roles": [],
+      "verified_date": "2026-10-23",
+      "company_source_url": "https://intr.tesla.cn/",
+      "company_evidence": {
+        "zh": "特斯拉官方招聘页明确热招职位地点为上海临港；旧供应链数据分析师不能由招聘首页证实。",
+        "en": "Tesla's official careers page identifies Shanghai Lingang for featured roles. Its careers homepage does not substantiate the old supply-chain data analyst record."
+      },
+      "careers_url": "https://www.tesla.cn/careers",
+      "industry_detail": "mobility",
+      "website": "https://www.tesla.cn/",
+      "zones": [
+        "lingang"
+      ],
+      "area_i18n": {
+        "zh": "临港 · 企业据点",
+        "en": "Lingang - company base"
+      },
+      "arabic": "Tesla"
+    },
+    {
+      "id": "microsoft",
+      "name": "微软",
+      "english": "Microsoft",
+      "category": "cloud",
+      "district": "闵行区",
+      "area": "紫竹 · 项目企业据点待复核",
+      "roles": [],
+      "verified_date": "2026-10-23",
+      "company_source_url": "https://careers.microsoft.com/v2/global/en/locations/shanghai.html",
+      "company_evidence": {
+        "zh": "微软上海官网明确紫竹、亚洲研究院、Reactor和华鑫是四处校园，旧描述把紫竹等同微软亚洲研究院有误；本次未获得紫竹闵行街道地址的独立原始依据，勿将此当成岗位工作区。",
+        "en": "Microsoft's Shanghai website identifies four campuses: Zizhu, Research Asia, Reactor and Huaxin. Equating Zizhu with Microsoft Research Asia was incorrect. No independent primary evidence for Zizhu's street address in Minhang was obtained in this review; do not treat this as a confirmed role location."
+      },
+      "careers_url": "https://careers.microsoft.com/v2/global/en/locations/shanghai.html",
+      "district_verification": "needs_address_source",
+      "industry_detail": "cloud",
+      "website": "https://www.microsoft.com/",
+      "zones": [],
+      "area_i18n": {
+        "zh": "紫竹 · 项目企业据点待复核",
+        "en": "Zizhu - project company base pending recheck"
+      },
+      "arabic": "Microsoft"
+    },
+    {
+      "id": "orientsec",
+      "name": "东方证券",
+      "english": "Orient Securities",
+      "category": "finance",
+      "district": "黄浦区",
+      "area": "中山南路",
+      "website": "https://www.dfzq.com.cn/",
+      "careers_url": "https://www.dfzq.com.cn/",
+      "company_source_url": "https://www.dfzq.com.cn/osoa/views/english/contactus/ContactUs/index.shtml",
+      "company_evidence": {
+        "zh": "官网联系地址为上海市黄浦区中山南路119号东方证券大厦。",
+        "en": "The official contact address is Orient Securities Building, 119 Zhongshan South Road, Huangpu District, Shanghai."
+      },
+      "logo_asset_url": null,
+      "roles": [],
+      "verified_date": "2026-10-23",
+      "industry_detail": "金融科技",
+      "zones": [],
+      "area_i18n": {
+        "zh": "中山南路",
+        "en": "Zhongshan South Road"
+      },
+      "arabic": "Orient Securities"
+    },
+    {
+      "id": "athub",
+      "name": "数据港",
+      "english": "Athub",
+      "category": "cloud",
+      "district": "静安区",
+      "area": "市北高新",
+      "website": "https://www.athub.com/",
+      "careers_url": "https://www.athub.com/",
+      "company_source_url": "https://www.athub.com/index/Lists/index/catid/32.html",
+      "company_evidence": {
+        "zh": "官网总部地址为静安区江场路1401弄14号18楼。",
+        "en": "The official headquarters address is Floor 18, Building 14, Lane 1401 Jiangchang Road, Jing'an District."
+      },
+      "logo_asset_url": null,
+      "roles": [],
+      "verified_date": "2026-10-23",
+      "industry_detail": "云计算与数据中心",
+      "zones": [],
+      "area_i18n": {
+        "zh": "市北高新",
+        "en": "Shibei High-Tech Park"
+      },
+      "arabic": "Athub"
+    },
+    {
+      "id": "yotta",
+      "name": "友塔游戏",
+      "english": "Yotta Games",
+      "category": "gaming",
+      "district": "长宁区",
+      "area": "虹桥",
+      "website": "https://www.yottagames.com.cn/",
+      "careers_url": "https://www.yotta-hr.com/zh/home",
+      "company_source_url": "https://www.career.zju.edu.cn/jyxt/sczp/zpztgl/ckZpgwList.zf?dwxxid=761C0E1569CA24AFE055000000000001",
+      "company_evidence": {
+        "zh": "浙江大学官方就业平台企业发布页列出长宁区娄山关路533号金虹桥国际中心及2027届校招。",
+        "en": "An employer posting on Zhejiang University's official careers platform lists Jinhongqiao International Centre, 533 Loushanguan Road, Changning District, and 2027 graduate recruitment."
+      },
+      "logo_asset_url": "https://homeres.yottagames.com.cn/img/logoImg.svg?v=7905172500",
+      "roles": [],
+      "verified_date": "2026-10-23",
+      "industry_detail": "游戏与数字内容",
+      "zones": [],
+      "area_i18n": {
+        "zh": "虹桥",
+        "en": "Hongqiao"
+      },
+      "arabic": "Yotta Games"
+    },
+    {
+      "id": "coscolines",
+      "name": "中远海运集运",
+      "english": "COSCO SHIPPING Lines",
+      "category": "commerce",
+      "district": "虹口区",
+      "area": "北外滩",
+      "website": "https://lines.coscoshipping.com/",
+      "careers_url": "https://lines.coscoshipping.com/",
+      "company_source_url": "https://www.lines.coscoshipping.com/lines_resource/pdf/quality2020en.pdf",
+      "company_evidence": {
+        "zh": "中远海运集运官网质量体系文件列明上海虹口区东大名路378号总部地址；文件属历史公开资料。",
+        "en": "An official COSCO SHIPPING Lines quality-system document lists the headquarters at 378 Dongdaming Road, Hongkou District, Shanghai. The document is a historical public source."
+      },
+      "logo_asset_url": null,
+      "roles": [],
+      "verified_date": "2026-10-23",
+      "industry_detail": "智慧航运与物流",
+      "zones": [],
+      "area_i18n": {
+        "zh": "北外滩",
+        "en": "North Bund"
+      },
+      "arabic": "COSCO SHIPPING Lines"
+    },
+    {
+      "id": "boke",
+      "name": "波克城市",
+      "english": "Boke",
+      "category": "gaming",
+      "district": "普陀区",
+      "area": "长风",
+      "website": "https://www.boke.com/",
+      "careers_url": "https://boke.jobs.feishu.cn/index",
+      "company_source_url": "https://www.boke.com/join.html",
+      "company_evidence": {
+        "zh": "官网加入我们页列明普陀区金沙江路1628弄10号2101室。",
+        "en": "The official Join Us page lists Room 2101, Building 10, Lane 1628 Jinshajiang Road, Putuo District."
+      },
+      "logo_asset_url": null,
+      "roles": [],
+      "verified_date": "2026-10-23",
+      "industry_detail": "游戏与数字内容",
+      "zones": [],
+      "area_i18n": {
+        "zh": "长风",
+        "en": "Changfeng"
+      },
+      "arabic": "Boke"
+    },
+    {
+      "id": "seari",
+      "name": "上海电科集团",
+      "english": "SEARI",
+      "category": "manufacturing",
+      "district": "普陀区",
+      "area": "武宁创新轴",
+      "website": "https://seari.com.cn/",
+      "careers_url": "https://seari.com.cn/",
+      "company_source_url": "https://seari.com.cn/contact-us",
+      "company_evidence": {
+        "zh": "集团官网列明上海市武宁路505号；业务涵盖电器技术研发、工业自动化与检测。",
+        "en": "The group's official website lists 505 Wuning Road, Shanghai. Its business includes electrical technology R&D, industrial automation and testing."
+      },
+      "logo_asset_url": null,
+      "roles": [],
+      "verified_date": "2026-10-23",
+      "industry_detail": "智能电器与工业技术",
+      "zones": [],
+      "area_i18n": {
+        "zh": "武宁创新轴",
+        "en": "Wuning Innovation Corridor"
+      },
+      "arabic": "SEARI"
+    },
+    {
+      "id": "baosteel",
+      "name": "宝钢股份",
+      "english": "Baosteel",
+      "category": "manufacturing",
+      "district": "宝山区",
+      "area": "宝钢基地",
+      "website": "https://www.baosteel.com/",
+      "careers_url": "https://www.baosteel.com/",
+      "company_source_url": "https://ecommerce.ibaosteel.com/portal/pdf/BGGF_ISO%2027001.pdf",
+      "company_evidence": {
+        "zh": "宝钢官网提供的有效期至2028年12月的ISO27001证书，列明宝钢股份在宝山区富锦路885号。",
+        "en": "An ISO 27001 certificate on Baosteel's website, valid until December 2028, lists Baoshan Iron & Steel at 885 Fujin Road, Baoshan District."
+      },
+      "logo_asset_url": null,
+      "roles": [],
+      "verified_date": "2026-10-23",
+      "industry_detail": "先进材料与智能制造",
+      "zones": [],
+      "area_i18n": {
+        "zh": "宝钢基地",
+        "en": "Baosteel Base"
+      },
+      "arabic": "Baosteel"
+    },
+    {
+      "id": "sensetime",
+      "name": "商汤科技",
+      "english": "SenseTime",
+      "category": "robotics",
+      "district": "徐汇区",
+      "area": "漕河泾",
+      "website": "https://www.sensetime.com/",
+      "careers_url": "https://hr.sensetime.com/",
+      "company_source_url": "https://www.sensetime.com/en/about",
+      "company_evidence": {
+        "zh": "官网办公室信息确认上海办公室位于徐汇区虹梅路；中文关于我们页列明虹梅路1900号。",
+        "en": "Official office information places the Shanghai office on Hongmei Road in Xuhui District; the Chinese About Us page specifies 1900 Hongmei Road."
+      },
+      "logo_asset_url": null,
+      "roles": [],
+      "verified_date": "2026-10-23",
+      "industry_detail": "人工智能",
+      "zones": [],
+      "area_i18n": {
+        "zh": "漕河泾",
+        "en": "Caohejing"
+      },
+      "arabic": "SenseTime"
+    },
+    {
+      "id": "sieyuan",
+      "name": "思源电气",
+      "english": "Sieyuan Electric",
+      "category": "energy",
+      "district": "闵行区",
+      "area": "颛桥",
+      "website": "https://www.sieyuan.com/",
+      "careers_url": "https://www.sieyuan.com/join",
+      "company_source_url": "https://www.sieyuan.com/uploads/upload/files/20260506/fbf2aade2647966a6b77a8176f2f2859.pdf",
+      "company_evidence": {
+        "zh": "官网2026年合规文件列明思源电气股份有限公司地址闵行区华宁路3399号。",
+        "en": "An official 2026 compliance document lists Sieyuan Electric at 3399 Huaning Road, Minhang District."
+      },
+      "logo_asset_url": null,
+      "roles": [],
+      "verified_date": "2026-10-23",
+      "industry_detail": "新能源与电力技术",
+      "zones": [],
+      "area_i18n": {
+        "zh": "颛桥",
+        "en": "Zhuanqiao"
+      },
+      "arabic": "Sieyuan Electric"
+    },
+    {
+      "id": "ucloud",
+      "name": "优刻得",
+      "english": "UCloud",
+      "category": "cloud",
+      "district": "杨浦区",
+      "area": "长阳创谷周边",
+      "website": "https://www.ucloud.cn/",
+      "careers_url": "https://ucloud.zhiye.com/",
+      "company_source_url": "https://www.sse.com.cn/star/market/stocklist/info/company/index.shtml?COMPANY_CODE=688158",
+      "company_evidence": {
+        "zh": "上交所公司概况列明通讯地址上海市杨浦区隆昌路619号10号B楼。",
+        "en": "The Shanghai Stock Exchange company profile lists the contact address at Building 10B, 619 Longchang Road, Yangpu District, Shanghai."
+      },
+      "logo_asset_url": null,
+      "roles": [],
+      "verified_date": "2026-10-23",
+      "industry_detail": "云计算与AI基础设施",
+      "zones": [],
+      "area_i18n": {
+        "zh": "长阳创谷周边",
+        "en": "Near Changyang Campus"
+      },
+      "arabic": "UCloud"
+    },
+    {
+      "id": "fmsh",
+      "name": "复旦微电子",
+      "english": "Fudan Microelectronics",
+      "category": "chip",
+      "district": "杨浦区",
+      "area": "复旦科技园",
+      "website": "https://www.fmsh.com/",
+      "careers_url": "https://www.fmsh.com/society/",
+      "company_source_url": "https://www.fmsh.com/contact.shtml",
+      "company_evidence": {
+        "zh": "官网上海总部为国泰路127号复旦大学国家大学科技园4号楼。",
+        "en": "The official Shanghai headquarters is Building 4, Fudan University National Science Park, 127 Guotai Road."
+      },
+      "logo_asset_url": null,
+      "roles": [],
+      "verified_date": "2026-10-23",
+      "industry_detail": "半导体",
+      "zones": [],
+      "area_i18n": {
+        "zh": "复旦科技园",
+        "en": "Fudan Science Park"
+      },
+      "arabic": "Fudan Microelectronics"
+    },
+    {
+      "id": "amec",
+      "name": "中微公司",
+      "english": "AMEC",
+      "category": "chip",
+      "district": "浦东新区",
+      "area": "浦东半导体设备产业",
+      "website": "https://www.amec-inc.com/",
+      "careers_url": "https://app.mokahr.com/campus_apply/amec/4362#/",
+      "company_source_url": "https://www.career.zju.edu.cn/jyxt/sczp/zpztgl/ckZpgwXq.zf?zpxxbh=5975882F8F447825E0653A68DD0E9B18",
+      "company_evidence": {
+        "zh": "浙大就业平台所载中微2027校招将企业和工作地标注为上海浦东新区；公司从事半导体加工设备。",
+        "en": "AMEC's 2027 recruitment posting on Zhejiang University's careers platform places the company and work location in Pudong New Area, Shanghai. The company makes semiconductor processing equipment."
+      },
+      "logo_asset_url": null,
+      "roles": [],
+      "verified_date": "2026-10-23",
+      "industry_detail": "半导体与芯片",
+      "zones": [],
+      "area_i18n": {
+        "zh": "浦东半导体设备产业",
+        "en": "Pudong Semiconductor Equipment Industry"
+      },
+      "arabic": "AMEC"
+    },
+    {
+      "id": "csg",
+      "name": "科大智能",
+      "english": "CSG Smart Science & Technology",
+      "category": "robotics",
+      "district": "松江区",
+      "area": "泗砖公路777号机器人产业园",
+      "website": "https://www.csg.com.cn/",
+      "careers_url": "https://xyz.51job.com/External/Apply.aspx?CtmID=6417946",
+      "company_source_url": "https://job.lzu.edu.cn/ueditor/upload/file/20230915/1694739989915051949.pdf",
+      "company_evidence": {
+        "zh": "兰州大学就业网企业招聘简章列上海松江泗砖公路777号；企业业务为数字能源与数字工业。",
+        "en": "An employer brochure on Lanzhou University's careers site lists 777 Sizhuan Highway, Songjiang, Shanghai. The business covers digital energy and digital industry."
+      },
+      "logo_asset_url": null,
+      "roles": [],
+      "verified_date": "2026-10-23",
+      "recruitment_note": "已确认松江产业园和官方校招渠道；检索到的具体算法岗位主要为较早简章，另有合肥岗位混杂，暂不计入上海真实岗位数量。",
+      "industry_detail": "智能制造与机器人",
+      "zones": [],
+      "area_i18n": {
+        "zh": "泗砖公路777号机器人产业园",
+        "en": "Robot Industrial Park, 777 Sizhuan Highway"
+      },
+      "arabic": "CSG Smart Science & Technology"
+    },
+    {
+      "id": "chintpower",
+      "name": "正泰电源",
+      "english": "CHINT Power",
+      "category": "energy",
+      "district": "松江区",
+      "area": "思贤路3255号",
+      "website": "https://www.chintpower.com/",
+      "careers_url": "https://www.chintpower.com/about/",
+      "company_source_url": "https://www.chintpower.com/index.html",
+      "company_evidence": {
+        "zh": "官网列上海正泰电源总部为松江区思贤路3255号，主营光伏逆变器及储能。",
+        "en": "The official website places Shanghai CHINT Power's headquarters at 3255 Sixian Road, Songjiang District. Its business includes photovoltaic inverters and energy storage."
+      },
+      "logo_asset_url": null,
+      "roles": [],
+      "verified_date": "2026-10-23",
+      "logo_research_url": "https://en.chintpower.com/",
+      "industry_detail": "新能源与储能",
+      "zones": [],
+      "area_i18n": {
+        "zh": "思贤路3255号",
+        "en": "3255 Sixian Road"
+      },
+      "arabic": "CHINT Power"
+    },
+    {
+      "id": "jiangnan",
+      "name": "江南造船",
+      "english": "Jiangnan Shipyard",
+      "category": "manufacturing",
+      "district": "崇明区",
+      "area": "长兴岛船舶产业",
+      "website": "https://www.jnshipyard.com.cn/",
+      "careers_url": "https://jnzhaopin.zhiye.com/jobs",
+      "company_source_url": "https://jnzhaopin.zhiye.com/jobs",
+      "company_evidence": {
+        "zh": "官方校招门户将2027校招和船舶研发岗位工作地明确标注为上海市崇明区。",
+        "en": "The official graduate recruitment portal explicitly locates 2027 graduate and ship R&D roles in Chongming District, Shanghai."
+      },
+      "logo_asset_url": "https://upload.wikimedia.org/wikipedia/commons/a/af/Jiangnan_Shipyard_logo.png",
+      "roles": [],
+      "verified_date": "2026-10-23",
+      "logo_source_url": "https://commons.wikimedia.org/wiki/File:Jiangnan_Shipyard_logo.png",
+      "logo_note": "Wikimedia保存的官方横版标志，来源标注江南造船原官网，2016上传。",
+      "industry_detail": "航空航天与高端装备",
+      "zones": [],
+      "area_i18n": {
+        "zh": "长兴岛船舶产业",
+        "en": "Changxing Island Shipbuilding Industry"
+      },
+      "arabic": "Jiangnan Shipyard"
+    }
+  ],
+  "restored_after_further_review": [
+    "bytedance",
+    "mihoyo"
+  ]
+}

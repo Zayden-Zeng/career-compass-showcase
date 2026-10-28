@@ -1,0 +1,352 @@
+{
+  "bilibili": {
+    "sourcePage": "https://apps.apple.com/cn/app/id736536022",
+    "assetUrl": "https://is5-ssl.mzstatic.com/image/thumb/Purple125/v4/6f/5f/3f/6f5f3f30-1099-6c52-4b84-eb2829eec638/AppIcon-1x_U007emarketing-0-6-0-0-sRGB-85-220.png/1024x1024w.png",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/bilibili.png"
+  },
+  "bytedance": {
+    "sourcePage": "https://www.bytedance.com/",
+    "assetUrl": "Embedded official SVG image",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/bytedance.png"
+  },
+  "trip": {
+    "sourcePage": "https://group.trip.com/",
+    "assetUrl": "https://dimg04.tripcdn.com/images/0x93s12000ixcf9k36A64.png",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/trip.png"
+  },
+  "meituan": {
+    "sourcePage": "https://www.meituan.com/",
+    "assetUrl": "Official website inline meituanApp SVG",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/meituan.png"
+  },
+  "mihoyo": {
+    "sourcePage": "https://www.mihoyo.com/",
+    "assetUrl": "https://www.mihoyo.com/_nuxt/img/mihoyo-logo.fc3399a.png",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/mihoyo.png"
+  },
+  "tencent": {
+    "sourcePage": "https://www.tencent.com/zh-cn/newsroom/media-resources/logos/",
+    "assetUrl": "https://www.tencent.com/wp-content/uploads/2022/12/04_Tencent_Graphics.png",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/tencent.png"
+  },
+  "pdd": {
+    "sourcePage": "https://www.pinduoduo.com/",
+    "assetUrl": "https://www.pinduoduo.com/favicon.png",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/pdd.png"
+  },
+  "tesla": {
+    "sourcePage": "https://service.tesla.com/",
+    "assetUrl": "Official inline symbol tds-icon-logo",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/tesla.png"
+  },
+  "nvidia": {
+    "sourcePage": "https://www.nvidia.com/en-us/about-nvidia/legal-info/logo-brand-usage/",
+    "assetUrl": "https://www.nvidia.com/content/nvidiaGDC/us/en_US/about-nvidia/legal-info/logo-brand-usage/_jcr_content/root/responsivegrid/nv_container_392921705/nv_container/nv_image.coreimg.svg/1776076920288/nvidia-logo-vert.svg",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/nvidia.png"
+  },
+  "agibot": {
+    "sourcePage": "https://www.agibot.com/",
+    "assetUrl": "https://www.agibot.com/public/static/index/en/images/logo2.png",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/agibot.png"
+  },
+  "red": {
+    "sourcePage": "https://www.xiaohongshu.com/protocols/about",
+    "assetUrl": "Embedded official header PNG",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/red.png"
+  },
+  "huawei": {
+    "sourcePage": "https://www.huawei.com/en/",
+    "assetUrl": "https://www.huawei.com/-/media/htemplate-home/1.0.1.20251205144752/components/assets/img/favicon-logo.svg",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/huawei.png"
+  },
+  "microsoft": {
+    "sourcePage": "https://learn.microsoft.com/en-us/entra/identity-platform/howto-add-branding-in-apps",
+    "assetUrl": "https://learn.microsoft.com/en-us/entra/identity-platform/media/howto-add-branding-in-apps/ms-symbollockup_mssymbol_19.svg",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/microsoft.png"
+  },
+  "orientsec": {
+    "sourcePage": "https://www.dfzq.com.cn/",
+    "assetUrl": "https://www.dfzq.com.cn/favicon.ico",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/orientsec.png"
+  },
+  "aia": {
+    "sourcePage": "https://www.aia.com.cn/",
+    "assetUrl": "https://www.aia.com.cn/etc.clientlibs/aia-wise/clientlibs/clientlib-site/resources/images/icons/aia-logo-red.svg",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/aia.png"
+  },
+  "intsig": {
+    "sourcePage": "https://www.intsig.com/",
+    "assetUrl": "https://www.intsig.com/favicon.png",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/intsig.png"
+  },
+  "athub": {
+    "sourcePage": "https://www.athub.com/",
+    "assetUrl": "https://www.athub.com/favicon.ico",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/athub.png"
+  },
+  "yotta": {
+    "sourcePage": "https://www.yottagames.com.cn/",
+    "assetUrl": "https://homeres.yottagames.com.cn/img/logoImg.svg?v=7905172500",
+    "background": "#183f42",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/yotta.png"
+  },
+  "bosch": {
+    "sourcePage": "https://www.bosch.com.cn/",
+    "assetUrl": "https://www.bosch.com.cn/media/tech/tech_images/favicon.svg",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/bosch.png"
+  },
+  "vcredit": {
+    "sourcePage": "https://www.vcredit.com/",
+    "assetUrl": "https://www.vcredit.com/media/1031/logo.png",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/vcredit.png"
+  },
+  "coscolines": {
+    "sourcePage": "https://lines.coscoshipping.com/",
+    "assetUrl": "https://lines.coscoshipping.com/favicon.ico",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/coscolines.png"
+  },
+  "boke": {
+    "sourcePage": "https://www.boke.com/",
+    "assetUrl": "https://png.pookcdn.net/new_net/en/boke-logo.png",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/boke.png"
+  },
+  "seari": {
+    "sourcePage": "https://seari.com.cn/",
+    "assetUrl": "https://seari.com.cn/src/index/img/21a1edb9c0b47c3c1f5b38e76af408c1.png",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/seari.png"
+  },
+  "baosight": {
+    "sourcePage": "https://www.baosight.com/",
+    "assetUrl": "https://www.baosight.com/favicon.ico",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/baosight.png"
+  },
+  "baosteel": {
+    "sourcePage": "https://www.baosteel.com/",
+    "assetUrl": "https://www.baosteel.com/img/favicon.ico",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/baosteel.png"
+  },
+  "huace": {
+    "sourcePage": "https://www.huace.cn/",
+    "assetUrl": "https://www.huace.cn/assets/images/header/favicon.ico",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/huace.png"
+  },
+  "zto": {
+    "sourcePage": "https://www.zto.com/",
+    "assetUrl": "https://fscdn.zto.com/GetPublicFile/clouddrive/PRO_124/zto-official/logo.png",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/zto.png"
+  },
+  "sensetime": {
+    "sourcePage": "https://www.sensetime.com/",
+    "assetUrl": "https://www.sensetime.com/assets/logo-frame10.png",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/sensetime.png"
+  },
+  "transwarp": {
+    "sourcePage": "https://www.transwarp.cn/",
+    "assetUrl": "https://www.transwarp.cn/favicon.ico",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/transwarp.png"
+  },
+  "sieyuan": {
+    "sourcePage": "https://www.sieyuan.com/",
+    "assetUrl": "https://www.sieyuan.com/static/cms/images/logo2.svg",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/sieyuan.png"
+  },
+  "bochu": {
+    "sourcePage": "https://www.bochu.com/contactus/",
+    "assetUrl": "https://d.fscut.com/wordpress-fscut/2024/01/baichulogo1.svg",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/bochu.png"
+  },
+  "ucloud": {
+    "sourcePage": "https://www.ucloud.cn/",
+    "assetUrl": "https://www.ucloud.cn/favicon.ico",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/ucloud.png"
+  },
+  "fmsh": {
+    "sourcePage": "https://www.fmsh.com/",
+    "assetUrl": "https://www.fmsh.com/favicon.ico",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/fmsh.png"
+  },
+  "smic": {
+    "sourcePage": "https://www.smics.com/",
+    "assetUrl": "https://www.smics.com/images/title-logo.png",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/smic.png"
+  },
+  "amec": {
+    "sourcePage": "https://www.amec-inc.com/",
+    "assetUrl": "https://www.amec-inc.com/uploads/images/20200929/1601381065768909.png",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/amec.png"
+  },
+  "comac": {
+    "sourcePage": "https://www.comac.cc/",
+    "assetUrl": "https://www.comac.cc/favicon.ico",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/comac.png"
+  },
+  "verisilicon": {
+    "sourcePage": "https://www.verisilicon.com/",
+    "assetUrl": "https://www.verisilicon.com:443/images/favicon.ico",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/verisilicon.png"
+  },
+  "titansci": {
+    "sourcePage": "https://www.titansci.com/",
+    "assetUrl": "https://www.titansci.com/images/logo-white.png",
+    "background": "#183f42",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/titansci.png"
+  },
+  "kaibao": {
+    "sourcePage": "https://www.xykb.com/",
+    "assetUrl": "https://www.xykb.com/favicon.ico",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/kaibao.png"
+  },
+  "everdisplay": {
+    "sourcePage": "https://www.everdisplay.com/",
+    "assetUrl": "https://www.everdisplay.com/images/logo.png",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/everdisplay.png"
+  },
+  "wuxista": {
+    "sourcePage": "https://sta.wuxiapptec.com/cn/",
+    "assetUrl": "https://sta.wuxiapptec.com/cn/wp-content/uploads/2023/09/favicon-1.png",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/wuxista.png"
+  },
+  "csg": {
+    "sourcePage": "https://www.csg.com.cn/",
+    "assetUrl": "https://www.csg.com.cn/favicon.ico",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/csg.png"
+  },
+  "chintpower": {
+    "sourcePage": "https://en.chintpower.com/",
+    "assetUrl": "https://en.chintpower.com/static/front/images/logo.png",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/chintpower.png"
+  },
+  "hudong": {
+    "sourcePage": "https://hudong.zhiye.com/",
+    "assetUrl": "https://portal-oss.zhiye.com/103452/image/70a33db6-a069-46f7-a829-c6c7719f15e8.png",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/hudong.png"
+  },
+  "jiangnan": {
+    "sourcePage": "https://jnzhaopin.zhiye.com/",
+    "assetUrl": "https://stcms.beisen.com/image/606767/b0f4b1bdfca8467f8d7744c5b4eda34e_o.png",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/jiangnan.png"
+  },
+  "unitedimaging": {
+    "sourcePage": "https://global.united-imaging.com/zh-cn/",
+    "assetUrl": "https://global.united-imaging.com/Assets/images/favicons/favicon-128.png",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/unitedimaging.png"
+  },
+  "hesai": {
+    "sourcePage": "https://www.hesaitech.com/cn/",
+    "assetUrl": "https://www.hesaitech.com/hesaitech/oss_trans/extra/favicon.webp",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/hesai.png"
+  },
+  "huayi": {
+    "sourcePage": "https://www.w-ibeda.com/",
+    "assetUrl": "https://www.w-ibeda.com/static/skin/images/favicon.ico",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/huayi.png"
+  },
+  "energy_singularity": {
+    "sourcePage": "https://energysingularity.cn/",
+    "assetUrl": "https://energysingularity.cn/images/logo.png",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/energy_singularity.png"
+  },
+  "startorus": {
+    "sourcePage": "https://startorus.com/",
+    "assetUrl": "https://startorus.com/apple-touch-icon.png",
+    "background": "white",
+    "verified_date": "2026-10-23",
+    "file": "assets/logos/startorus.png"
+  }
+}

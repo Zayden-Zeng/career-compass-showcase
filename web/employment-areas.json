@@ -1,0 +1,201 @@
+{
+  "note": "Approximate label anchors, not surveyed boundaries or office addresses. Selected major areas, not an exhaustive official list.",
+  "sources": [
+    "https://ghzyj.sh.gov.cn/zcjd/20260921/50daa31b1490408391df7f40e519b780.html",
+    "https://map.sheitc.sh.gov.cn/h5/"
+  ],
+  "areas": [
+    {
+      "zh": "张江",
+      "en": "Zhangjiang",
+      "coordinate": [
+        121.6,
+        31.2
+      ]
+    },
+    {
+      "zh": "金桥",
+      "en": "Jinqiao",
+      "coordinate": [
+        121.61,
+        31.25
+      ]
+    },
+    {
+      "zh": "外高桥",
+      "en": "Waigaoqiao",
+      "coordinate": [
+        121.6,
+        31.34
+      ]
+    },
+    {
+      "zh": "江湾—五角场",
+      "en": "Jiangwan–Wujiaochang",
+      "coordinate": [
+        121.51,
+        31.31
+      ]
+    },
+    {
+      "zh": "漕河泾",
+      "en": "Caohejing",
+      "coordinate": [
+        121.4,
+        31.17
+      ]
+    },
+    {
+      "zh": "徐汇滨江",
+      "en": "West Bund",
+      "coordinate": [
+        121.46,
+        31.17
+      ]
+    },
+    {
+      "zh": "紫竹",
+      "en": "Zizhu",
+      "coordinate": [
+        121.45,
+        31.02
+      ]
+    },
+    {
+      "zh": "市北高新",
+      "en": "Shibei",
+      "coordinate": [
+        121.44,
+        31.29
+      ]
+    },
+    {
+      "zh": "虹桥商务区",
+      "en": "Hongqiao CBD",
+      "coordinate": [
+        121.31,
+        31.2
+      ]
+    },
+    {
+      "zh": "虹桥临空",
+      "en": "Hongqiao Linkong",
+      "coordinate": [
+        121.35,
+        31.23
+      ]
+    },
+    {
+      "zh": "陆家嘴",
+      "en": "Lujiazui",
+      "coordinate": [
+        121.51,
+        31.24
+      ]
+    },
+    {
+      "zh": "北外滩",
+      "en": "North Bund",
+      "coordinate": [
+        121.5,
+        31.25
+      ]
+    },
+    {
+      "zh": "长阳创谷",
+      "en": "Changyang Campus",
+      "coordinate": [
+        121.53,
+        31.28
+      ]
+    },
+    {
+      "zh": "桃浦智创城",
+      "en": "Taopu",
+      "coordinate": [
+        121.37,
+        31.28
+      ]
+    },
+    {
+      "zh": "南大智慧城",
+      "en": "Nanda",
+      "coordinate": [
+        121.36,
+        31.31
+      ]
+    },
+    {
+      "zh": "嘉定汽车城（安亭）",
+      "en": "Anting Auto City",
+      "coordinate": [
+        121.17,
+        31.29
+      ]
+    },
+    {
+      "zh": "嘉定新城",
+      "en": "Jiading New City",
+      "coordinate": [
+        121.26,
+        31.35
+      ]
+    },
+    {
+      "zh": "松江G60科创走廊",
+      "en": "Songjiang G60",
+      "coordinate": [
+        121.26,
+        31.07
+      ]
+    },
+    {
+      "zh": "莘庄工业区",
+      "en": "Xinzhuang Industrial",
+      "coordinate": [
+        121.38,
+        31.08
+      ]
+    },
+    {
+      "zh": "青浦新城",
+      "en": "Qingpu New City",
+      "coordinate": [
+        121.12,
+        31.15
+      ]
+    },
+    {
+      "zh": "东方美谷（奉贤）",
+      "en": "Oriental Beauty Valley",
+      "coordinate": [
+        121.49,
+        30.94
+      ]
+    },
+    {
+      "zh": "滴水湖／临港主城区",
+      "en": "Dishui Lake / Lingang",
+      "coordinate": [
+        121.93,
+        30.9
+      ]
+    },
+    {
+      "zh": "临港产业区",
+      "en": "Lingang Industrial",
+      "coordinate": [
+        121.8,
+        30.88
+      ]
+    },
+    {
+      "zh": "康桥",
+      "en": "Kangqiao",
+      "coordinate": [
+        121.59,
+        31.14
+      ]
+    }
+  ]
+}
