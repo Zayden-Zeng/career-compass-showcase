@@ -1,3 +1,5 @@
 __pycache__/
 *.pyc
 profile.json
+
+.DS_Store
