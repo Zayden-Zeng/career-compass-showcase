@@ -28,6 +28,22 @@ Browse the city map, choose a district and explore company locations and recorde
 ![Companies in Pudong](screenshots/Screenshots-Pudong-Map.png)
 ![Company galaxy](screenshots/Screenshots-Company-Galaxy.png)
 
+## Browse districts, companies and roles
+
+Explore searchable directories of Shanghai districts, companies and recorded roles. Select an entry to continue exploring its information.
+
+![District directory](screenshots/Screenshots-District-Directory.png)
+![Company directory](screenshots/Screenshots-Company-Directory.png)
+![Role directory](screenshots/Screenshots-Role-Directory.png)
+
+## Explore a role
+
+Open a role to see its recorded location, hiring status, source information, skills and an indicative company location. Follow the original listing to check current details; a company map marker is not a confirmed workplace for every role.
+
+![Example role details](screenshots/Screenshots-Role-Details.png)
+
+*These screenshots show an earlier data snapshot. Counts and individual records may change as locations and sources are reviewed.*
+
 ## Connect courses and careers
 
 Select courses to explore related roles and the skills connecting them. The six-direction course profile visualises course coverage; click a direction to filter its related courses.

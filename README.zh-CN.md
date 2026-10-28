@@ -28,6 +28,22 @@ Career Compass 帮助计算机专业学生探索大学学习与上海潜在职�
 ![浦东企业](screenshots/Screenshots-Pudong-Map.png)
 ![企业星环](screenshots/Screenshots-Company-Galaxy.png)
 
+## 浏览行政区、企业和岗位
+
+在可搜索的列表中浏览上海行政区、企业和已收录的岗位，选择条目继续查看相关信息。
+
+![行政区列表](screenshots/Screenshots-District-Directory.png)
+![企业列表](screenshots/Screenshots-Company-Directory.png)
+![岗位列表](screenshots/Screenshots-Role-Directory.png)
+
+## 查看岗位详情
+
+打开岗位可查看已记录的招聘地点、招聘状态、来源、技能，以及供参考的企业据点。请通过原招聘页面核实最新信息；企业地图标记不代表每个岗位的工作地点都已确认。
+
+![岗位详情示例](screenshots/Screenshots-Role-Details.png)
+
+*这些截图来自此前的数据版本，岗位地点及来源核查后，数量和具体记录可能发生变化。*
+
 ## 从课程探索职业
 
 选择课程，探索相关岗位及连接课程和岗位的技能。六方向课程画像展示课程覆盖的广度；点击某个方向可筛选相关课程。
