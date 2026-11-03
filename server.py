@@ -144,11 +144,12 @@ class Handler(SimpleHTTPRequestHandler):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
+    parser.add_argument('--host', default='127.0.0.1', help='Network interface to listen on')
     parser.add_argument('--port', type=int, default=8766)
     parser.add_argument('--no-browser', action='store_true',
                         help='Do not open a browser automatically')
     args = parser.parse_args()
-    with ThreadingHTTPServer(('127.0.0.1', args.port), Handler) as server:
+    with ThreadingHTTPServer((args.host, args.port), Handler) as server:
         url = f'http://127.0.0.1:{server.server_address[1]}/'
         print(f'Career Compass: {url}', flush=True)
         if not args.no_browser:
