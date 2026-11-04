@@ -1240,8 +1240,8 @@
     const found=getRole(uid);if(!found)return;
     const showCatalogBack=fromCatalog||(state.dialog==='role'&&state.catalogReturn);
     const {company,role}=found;state.role=uid;state.dialog='role';state.catalogReturn=showCatalogBack;
-    const mastered=new Set(state.mastered[uid]||[]),source=safeURL(role.source_url);
-    showDialog(`${showCatalogBack?`<button type="button" class="panel-back" data-catalog-back>${t('catalogBack')}</button>`:''}<div class="dialog-company">${companyLogo(company)}<div>${esc(companyName(company))}<small>${t('companyBase')}: ${districtName(company.district)} · ${categoryName(company.category)}</small></div></div>${roleHeaderLinks(company,role)}<h2 id="dialog-title">${esc(localized(role.title))}</h2>${language==='en'||!role.title.en||role.title.en===localized(role.title)?'':`<div class="role-english">${latin(role.title.en)}</div>`}<div class="detail-tags"><span>${experienceName(role.experience.type)}</span><span>${t('skillsCount',{n:role.skills.length})}</span></div>${roleEvidence(role)}${roleLocationPreview(company)}<p class="location-distinction">${t('officeNote')}</p><section class="detail-section"><h3>${t('responsibilities')}</h3><p>${esc(localized(role.description))}</p></section><section class="detail-section"><h3>${t('experience')}</h3><p>${esc(localized(role.experience))||t('experienceUnknown')}</p></section><section class="detail-section"><h3>${t('requiredSkills')}</h3><p style="margin-bottom:12px">${t(role.skills.length?'selectSkills':'noSkillsHelp')}</p><div class="skills-picker">${role.skills.map((s,i)=>`<label class="skill-choice"><input type="checkbox" name="mastered" value="${esc(s)}" id="skill-${i}" ${mastered.has(s)?'checked':''}>${latin(skillName(s))}</label>`).join('')}</div><div class="learning-box" id="learning-results" aria-live="polite"></div></section><section class="detail-section source-box"><h3>${t('sourceTitle')}</h3>${source?`<a href="${esc(source)}" target="_blank" rel="noopener noreferrer">${t('sourceLink')} ↗</a>`:`<p>${t('sourceMissing')}</p>`}<p>${esc(localized(role.verification_note))||t('statusPublishedNote')}</p>${source?`<p class="source-url">${esc(source)}</p>`:''}</section><div class="detail-actions"><button class="primary-button" id="save-role" data-save-role="${esc(role.uid)}">${t(saved.has(role.uid)?'savedRole':'saveRole')}</button><button class="secondary-button" data-close-dialog>${t('continueMap')} ↗</button></div>`);
+    const mastered=effectiveSkills(role),source=safeURL(role.source_url);
+    showDialog(`${showCatalogBack?`<button type="button" class="panel-back" data-catalog-back>${t('catalogBack')}</button>`:''}<div class="dialog-company">${companyLogo(company)}<div>${esc(companyName(company))}<small>${t('companyBase')}: ${districtName(company.district)} · ${categoryName(company.category)}</small></div></div>${roleHeaderLinks(company,role)}<h2 id="dialog-title">${esc(localized(role.title))}</h2>${language==='en'||!role.title.en||role.title.en===localized(role.title)?'':`<div class="role-english">${latin(role.title.en)}</div>`}<div class="detail-tags"><span>${experienceName(role.experience.type)}</span><span>${t('skillsCount',{n:role.skills.length})}</span></div>${roleEvidence(role)}${roleLocationPreview(company)}<p class="location-distinction">${t('officeNote')}</p><section class="detail-section"><h3>${t('responsibilities')}</h3><p>${esc(localized(role.description))}</p></section><section class="detail-section"><h3>${t('experience')}</h3><p>${esc(localized(role.experience))||t('experienceUnknown')}</p></section><section class="detail-section"><h3>${t('requiredSkills')}</h3><p style="margin-bottom:12px">${t(role.skills.length?'selectSkills':'noSkillsHelp')}</p><p>${localized({zh:'已学课程会同步关联技能；你可取消不符合自身情况的技能。取消技能不会删除已学课程记录。',en:'Studied courses link to related skills. Uncheck any that do not reflect your experience; this does not remove your course record.',ar:'ترتبط المقررات بمهاراتها. يمكنك إلغاء أي مهارة لا تعكس خبرتك دون حذف سجل المقرر.'})}</p><div id="skill-groups">${skillGroupMarkup(role,mastered)}</div><div class="learning-box" id="learning-results" aria-live="polite"></div></section><section class="detail-section source-box"><h3>${t('sourceTitle')}</h3>${source?`<a href="${esc(source)}" target="_blank" rel="noopener noreferrer">${t('sourceLink')} ↗</a>`:`<p>${t('sourceMissing')}</p>`}<p>${esc(localized(role.verification_note))||t('statusPublishedNote')}</p>${source?`<p class="source-url">${esc(source)}</p>`:''}</section><div class="detail-actions"><button class="primary-button" id="save-role" data-save-role="${esc(role.uid)}">${t(saved.has(role.uid)?'savedRole':'saveRole')}</button><button class="secondary-button" data-close-dialog>${t('continueMap')} ↗</button></div>`);
     renderLearning();
   }
   const COURSE_AR={
@@ -1264,7 +1264,28 @@
     'Storage unavailable; changes may not persist.':'التخزين غير متاح؛ قد لا يتم حفظ التغييرات.'};
   const courseText=(zh,en)=>language==='zh'?zh:(language==='ar'?(COURSE_AR[en]||en):en);
   let learnedCourses=new Set();
+  const manualSkills=new Set();
+  const excludedSkills=new Set();
+  let previousCourses=new Set();
+  try {const profile=JSON.parse(localStorage.getItem('compass-skill-profile')||'{}');
+    for(const skill of profile.manual||[])manualSkills.add(skill);
+    for(const skill of profile.excluded||[])excludedSkills.add(skill);
+  } catch(error) {}
+  function courseSkills(courses=learnedCourses) {
+    return new Set(Object.entries(data.skill_courses).filter(([skill,pairs])=>pairs.some(([code])=>courses.has(code))).map(([skill])=>skill));
+  }
+  function effectiveSkills(role) {
+    const covered=courseSkills();
+    return new Set(role.skills.filter(skill=>!excludedSkills.has(skill)&&(manualSkills.has(skill)||covered.has(skill))));
+  }
+  function persistSkillProfile() {
+    try {localStorage.setItem('compass-skill-profile',JSON.stringify({manual:[...manualSkills],excluded:[...excludedSkills]}));}catch(error){}
+  }
   function persistLearnedCourses() {
+    const changed=new Set([...previousCourses,...learnedCourses].filter(code=>previousCourses.has(code)!==learnedCourses.has(code)));
+    for(const skill of courseSkills(changed))excludedSkills.delete(skill);
+    previousCourses=new Set(learnedCourses);
+    persistSkillProfile();
     try {
       if(learnedCourses.size)localStorage.setItem('compass-learned-courses',JSON.stringify([...learnedCourses]));
       else localStorage.removeItem('compass-learned-courses');
@@ -1273,6 +1294,7 @@
     }
   }
   try { const savedCourses=JSON.parse(localStorage.getItem('compass-learned-courses')||'[]'); if(Array.isArray(savedCourses))learnedCourses=new Set(savedCourses.filter(c=>data.courses[c])); } catch(error) {}
+  previousCourses=new Set(learnedCourses);
   function courseChoice(code) {
     return `<label class="skill-choice${learnedCourses.has(code)?' is-done':''}"><input type="checkbox" data-learned-course="${esc(code)}" ${learnedCourses.has(code)?'checked':''}><bdi dir="ltr">${esc(code)}</bdi><span class="course-choice-name">· ${esc(localized(data.courses[code].name))}${code==='COMP9103' ? (language==='zh'?'（已停开）':language==='ar'?' (لم يعد متاحاً)':' (no longer offered)') : ''}</span></label>`;
   }
@@ -1293,9 +1315,9 @@
     {COMP2017:1,COMP2123:1,COMP3027:1,COMP9001:1,COMP9123:1,INFO1110:1,INFO1113:1,COMP9103:1,COMP5310:.5,COMP5339:.5},
     {COMP5310:1,COMP5339:1,COMP9120:1,DATA1001:1,DATA2001:1,DATA2002:1,ISYS2120:1,STAT5002:1,STAT5003:1,COMP5318:.5,COMP5347:.5},
     {COMP3308:1,COMP5318:1,COMP5328:1,COMP5329:1,COMP5310:.5,DATA2002:.5,STAT5003:.5},
-    {COMP2017:1,COMP3520:1,COMP5348:1,COMP5349:1,COMP5426:1,COMP5313:.5,COMP5339:.5,COMP5047:.5},
+    {COMP9121:1,COMP2017:1,COMP3520:1,COMP5348:1,COMP5349:1,COMP5426:1,COMP5313:.5,COMP5339:.5,COMP5047:.5},
     {COMP2017:1,COMP5347:1,COMP5348:1,COMP9103:1,INFO1113:1,SOFT2201:1,SOFT2412:1,COMP9001:.5,INFO1110:.5,COMP9120:.5},
-    {COMP5618:1,ELEC5616:1,COMP2017:.5,COMP5047:.5,COMP5347:.5,ISYS2120:.5}
+    {COMP9121:.5,COMP5618:1,ELEC5616:1,COMP2017:.5,COMP5047:.5,COMP5347:.5,ISYS2120:.5}
   ];
   let courseAchievementWasUnlocked = null;
   let radarPreviousCourseCount=null;
@@ -1308,25 +1330,130 @@
     const box=document.querySelector('#course-radar');if(!box)return;
     const idx=language==='zh'?0:language==='ar'?2:1;
     const courseCount=learnedCourses.size;
-    if(radarPreviousCourseCount!==null && courseCount===radarPreviousCourseCount+1 && courseCount>0 && courseCount%5===0)radarStarUntil=Date.now()+4200;
     radarPreviousCourseCount=courseCount;
-    const counts=courseRadarAxes.map((axis,i)=>[...learnedCourses].filter(code=>courseAxisMatches(code,i)).length);
+    const counts=window.CompassCoverage.calculate(learnedCourses,courseAxisWeights).counts;
     const unlocked=counts.every(count=>count>=3);
     const celebrate=unlocked && courseAchievementWasUnlocked===false;
     courseAchievementWasUnlocked=unlocked;
     box.classList.toggle('radar-unlocked',unlocked);
     box.classList.toggle('radar-celebrate',celebrate);
     const gaps=courseRadarAxes.map((axis,i)=>counts[i]<3 ? `${axis.labels[idx]} ${counts[i]}/3` : null).filter(Boolean);
-    const badge=unlocked ? ['✦ 六边形战士 · 已解锁','✦ Hexagon Ranger · Unlocked','✦ مستكشف الأبعاد الستة · تم الفتح'][idx] : ['六边形战士 · 待解锁','Hexagon Ranger · Locked','مستكشف الأبعاد الستة · مغلق'][idx];
+    const badge=unlocked ? ['✦ 六个方向已覆盖','✦ Six directions explored','✦ تم استكشاف ستة اتجاهات'][idx] : ['六个方向的课程覆盖','Course coverage across six directions','تغطية المقررات في ستة اتجاهات'][idx];
     const progress=unlocked ? ['六个方向各有至少 3 门关联课程；这是课程探索成就，不是能力认证。','At least 3 related courses in each direction. This achievement describes course coverage, not proficiency.','ثلاثة مقررات مرتبطة على الأقل في كل اتجاه؛ هذا إنجاز لتغطية المقررات وليس شهادة مهارة.'][idx] : [`各方向需 3 门关联课程；待补：${gaps.join('、')}`, `Three related courses per direction; remaining: ${gaps.join(', ')}`, `ثلاثة مقررات مرتبطة لكل اتجاه؛ المتبقي: ${gaps.join('، ')}`][idx];
     const radarIntensity=counts.reduce((sum,count)=>sum+Math.min(count,3),0)/18;
     const points=counts.map((count,i)=>{const angle=-Math.PI/2+i*Math.PI/3, r=80*Math.min(count,3)/3;return `${100+Math.cos(angle)*r},${100+Math.sin(angle)*r}`;}).join(' ');
     const ring=r=>Array.from({length:6},(_,i)=>{const a=-Math.PI/2+i*Math.PI/3;return `${100+Math.cos(a)*r},${100+Math.sin(a)*r}`;}).join(' ');
-    const title=['课程方向画像','Your course profile','ملف اتجاهات المقررات'][idx];
+    const title=['课程方向','Course profile','اتجاهات المقررات'][idx];
     const description=['每个方向显示关联课程数，图形上限为 3 门。核心与辅助关联见课程图例；课程覆盖不代表技能掌握。','Each axis shows related courses, capped visually at 3. See the legend for core and supporting relevance. Coverage is not proficiency.','يعرض كل محور عدد المقررات ذات الصلة بحد بصري قدره ٣. التغطية لا تعني إتقان المهارات.'][idx];
-    box.innerHTML=`<div class="radar-copy"><span class="radar-kicker">COURSE PROFILE</span><h3>${title}</h3><p>${description}</p><p class="radar-filter-hint">${['点击图中的方向筛选课程，再次点击显示全部。','Select a direction to filter courses; select it again to show all.','اختر اتجاهاً لتصفية المقررات، ثم اختره مجدداً لعرض الكل.'][idx]}</p><div class="radar-achievement ${unlocked?'is-unlocked':''}"><strong>${badge}</strong><span>${esc(progress)}</span></div></div><div class="radar-visual" dir="ltr">${courseRadarAxes.map((axis,i)=>`<button type="button" class="radar-label radar-label-${i}" data-radar-axis="${i}" aria-pressed="${selectedRadarAxis===i}" dir="${language==='ar'?'rtl':'auto'}"><span>${esc(axis.labels[idx])}</span><b><bdi dir="ltr">${counts[i]}</bdi></b></button>`).join('')}<svg class="radar-chart" viewBox="12 12 176 176" aria-hidden="true"><defs><radialGradient id="course-radar-spectrum" gradientUnits="userSpaceOnUse" cx="100" cy="100" r="80"><stop offset="0%" stop-color="#9fe6c3"/><stop offset="25%" stop-color="#45bcac"/><stop offset="50%" stop-color="#4f8ed5"/><stop offset="75%" stop-color="#866bc8"/><stop offset="100%" stop-color="#e9a85c"/></radialGradient><radialGradient id="course-radar-gold" gradientUnits="userSpaceOnUse" cx="100" cy="100" r="80"><stop offset="0%" stop-color="#fff2b8"/><stop offset="45%" stop-color="#f5d371"/><stop offset="100%" stop-color="#bc821a"/></radialGradient></defs><g class="radar-grid">${[16,32,48,64,80].map(r=>`<polygon points="${ring(r)}"/>`).join('')}${Array.from({length:6},(_,i)=>{const a=-Math.PI/2+i*Math.PI/3;return `<line x1="100" y1="100" x2="${100+Math.cos(a)*80}" y2="${100+Math.sin(a)*80}"/>`;}).join('')}</g><polygon class="radar-fill" style="--radar-opacity:${(0.70+radarIntensity*0.18).toFixed(2)}" points="${points}"/></svg></div>`;
-    if(Date.now()<radarStarUntil){const visual=box.querySelector('.radar-visual');visual?.classList.add('radar-star-active');const overlay=document.createElement('div');overlay.className='radar-star-toast';overlay.setAttribute('aria-label',['课程里程碑','Course milestone','إنجاز المقررات'][idx]);overlay.innerHTML=`<div class="milestone-emblem" aria-hidden="true"><svg viewBox="0 0 96 104"><ellipse cx="48" cy="91" rx="32" ry="6" fill="#123c31" opacity=".12"/><path d="M23 83V40c0-17 11-29 25-29s25 12 25 29v43c-16 7-34 7-50 0Z" fill="#f5edcd" stroke="#b1bf9c" stroke-width="2"/><path d="M29 80V41c0-14 8-23 19-23s19 9 19 23v39c-12 5-26 5-38 0Z" fill="#fffaf0"/><path d="M39 33h18M39 39h18" stroke="#b1c69c" stroke-width="2" stroke-linecap="round"/><text x="48" y="67" text-anchor="middle" fill="#245b47" font-size="27" font-weight="700" font-family="system-ui">${courseCount}</text><path d="M17 87h62" stroke="#92ad96" stroke-width="2" stroke-linecap="round"/></svg></div><div class="milestone-copy"><span class="milestone-eyebrow">${['学习旅程','YOUR LEARNING JOURNEY','رحلة التعلم'][idx]}</span><strong>${['里程碑','Milestone','محطة'][idx]} <bdi dir="ltr">${courseCount/5}</bdi></strong><span>${[ `已选择 ${courseCount} 门课程`, `${courseCount} courses selected`, `تم اختيار ${courseCount} مقررات` ][idx]}</span></div><span class="milestone-shimmer" aria-hidden="true"></span>`;box.appendChild(overlay);clearTimeout(radarStarTimer);radarStarTimer=setTimeout(()=>{radarStarUntil=0;visual?.classList.remove('radar-star-active');overlay.remove();},Math.max(0,radarStarUntil-Date.now()));}
+    box.innerHTML=`<div class="radar-copy"><h3>${title}</h3><p class="radar-filter-hint">${['点击方向筛选课程 · 覆盖不代表掌握','Select a direction to filter · Coverage is not proficiency','اختر اتجاهاً للتصفية · التغطية لا تعني الإتقان'][idx]}</p></div><div class="radar-visual" dir="ltr">${courseRadarAxes.map((axis,i)=>`<button type="button" class="radar-label radar-label-${i}" data-radar-axis="${i}" aria-pressed="${selectedRadarAxis===i}" dir="${language==='ar'?'rtl':'auto'}"><span>${esc(axis.labels[idx])}</span><b><bdi dir="ltr">${window.CompassCoverage.format(counts[i])}</bdi></b></button>`).join('')}<svg class="radar-chart" viewBox="12 12 176 176" aria-hidden="true"><defs><radialGradient id="course-radar-spectrum" gradientUnits="userSpaceOnUse" cx="100" cy="100" r="80"><stop offset="0%" stop-color="#9fe6c3"/><stop offset="25%" stop-color="#45bcac"/><stop offset="50%" stop-color="#4f8ed5"/><stop offset="75%" stop-color="#866bc8"/><stop offset="100%" stop-color="#e9a85c"/></radialGradient><radialGradient id="course-radar-gold" gradientUnits="userSpaceOnUse" cx="100" cy="100" r="80"><stop offset="0%" stop-color="#fff2b8"/><stop offset="45%" stop-color="#f5d371"/><stop offset="100%" stop-color="#bc821a"/></radialGradient></defs><g class="radar-grid">${[16,32,48,64,80].map(r=>`<polygon points="${ring(r)}"/>`).join('')}${Array.from({length:6},(_,i)=>{const a=-Math.PI/2+i*Math.PI/3;return `<line x1="100" y1="100" x2="${100+Math.cos(a)*80}" y2="${100+Math.sin(a)*80}"/>`;}).join('')}</g><polygon class="radar-fill" style="--radar-opacity:${(0.70+radarIntensity*0.18).toFixed(2)}" points="${points}"/></svg></div>`;
+    renderHistoryBadges(box,counts,idx);
   }
+
+  const historyBadges = [
+    ['analytical-engine','Analytical Engine','1834','机械计算的设想：分析机设计。','A design for programmable mechanical computation.','تصميم للحوسبة الميكانيكية القابلة للبرمجة.'],
+    ['turing','Turing Machine','1936','图灵以理论模型探索什么可以被计算。','Turing explored what can be computed through a theoretical model.','استكشف تورنغ ما يمكن حسابه بنموذج نظري.'],
+    ['eniac','ENIAC','1946','早期通用电子计算机，1946 年公开亮相。','An early general-purpose electronic computer, publicly unveiled in 1946.','حاسوب إلكتروني مبكر للأغراض العامة، كُشف عنه عام 1946.'],
+    ['ibm1401','IBM 1401','1959','数据处理走向更广泛的商业应用。','Data processing reached a wider business audience.','وصلت معالجة البيانات إلى نطاق أوسع من الأعمال.'],
+    ['intel4004','Intel 4004','1971','微处理器把处理能力集成到芯片上。','A microprocessor brought processing onto a chip.','جمع المعالج الدقيق قدرات المعالجة على شريحة.'],
+    ['macintosh','Macintosh','1984','图形界面让个人计算更直观。','A graphical interface made personal computing more approachable.','جعلت الواجهة الرسومية الحوسبة الشخصية أسهل.'],
+    ['www','World Wide Web','1989','1989 年提出万维网；图案参考 CERN 保存的后期早期网页，并非 1989 年截图。','The Web was proposed in 1989. Artwork references a later early page preserved by CERN, not a 1989 screenshot.','اقتُرحت الويب عام 1989؛ يستند الرسم إلى صفحة مبكرة لاحقة محفوظة في CERN.'],
+    ['cuda','CUDA','2006','GPU 通用计算平台；图案是艺术化表达，不是特定 2006 年芯片的照片。','A platform for general-purpose GPU computing; artwork is illustrative, not a photo of a 2006 chip.','منصة للحوسبة العامة على GPU؛ الرسم توضيحي وليس صورة لشريحة من 2006.'],
+    ['dgx1','DGX-1','2016','面向深度学习的集成 GPU 系统。','An integrated GPU system built for deep learning.','نظام GPU متكامل للتعلم العميق.'],
+    ['chatgpt','ChatGPT','2022','对话式生成 AI 进入大众视野。','Conversational generative AI reached a broad public audience.','وصل الذكاء الاصطناعي التوليدي الحواري إلى جمهور واسع.'],
+    ['agi','AGI','Future vision','未来设想：广泛的通用智能。鲸鱼仅作视觉象征，不表示 DeepSeek 已实现 AGI。','A future vision of general intelligence. The whale is symbolic, not a claim that DeepSeek has achieved AGI.','تصور مستقبلي للذكاء العام؛ الحوت رمز وليس ادعاءً بتحقيق AGI.'],
+    ['asi','ASI','Future vision','未来设想：超越人类智能。由人的视角向未知的复杂网络展开。','A future vision of intelligence beyond human capability, unfolding from a human perspective into unknown complexity.','تصور مستقبلي لذكاء يتجاوز قدرات البشر، من منظور الإنسان إلى تعقيد مجهول.'],
+    ['singularity','The Singularity Is Near','Ray Kurzweil','以库兹韦尔著作作结：技术加速将如何改变人类？这是一种未来思想，而非已实现的事件。','A closing reference to Kurzweil’s book: how might accelerating technology change humanity? A future perspective, not an accomplished event.','إشارة ختامية لكتاب كورزويل: كيف قد تغير التقنية المتسارعة البشرية؟ تصور مستقبلي وليس حدثاً تحقق.']
+  ];
+  const historyThresholds=[1,2,3,4,5,6,7,8,10,12,14,16,18];
+  const historyCelebrated=new Set();
+  let historyCelebrationQueue=[];
+  let historyQueueRunning=false;
+  let historyPreviousLevel=null;
+  const historyPulseStarted=new Map();
+  const historyImage=b=>`assets/milestones/${b[0]}.webp`;
+  function renderHistoryBadges(box,counts,idx){
+    let shelf=document.querySelector('#history-badges');
+    if(!shelf){shelf=document.createElement('section');shelf.id='history-badges';shelf.className='history-badges';box.querySelector('.radar-copy').append(shelf);}
+    // One shared source of truth: six weighted axes, each capped at three.
+    const score=counts.reduce((sum,n)=>sum+n,0);
+    const level=window.CompassCoverage.level(score,historyThresholds);
+    shelf.dataset.score=String(score);
+    shelf.dataset.level=String(level);
+    const rules=['每门课程最多贡献 1 分，按关联权重分配到各方向（不重复加分）；每方向最多 3 分。总分等于六方向之和。','Each course contributes at most 1 point, shared proportionally across its related directions. Each direction is capped at 3; their sum is the total.','يساهم كل مقرر بنقطة واحدة كحد أقصى موزعة نسبياً بين اتجاهاته. حد كل اتجاه 3؛ المجموع هو النتيجة.'][idx];
+    box.querySelector('.radar-copy').title=rules;
+    box.querySelector('.radar-copy p').innerHTML=`<bdi dir="ltr">${window.CompassCoverage.format(score)} / 18</bdi> ${['探索分 · 点击徽章查看','exploration points · Select a badge','نقاط استكشاف · اختر شارة'][idx]}`;
+    box.querySelectorAll('[data-radar-axis]').forEach((button,i)=>button.title=`${window.CompassCoverage.format(counts[i])} / 3 · ${rules}`);
+    shelf.setAttribute('aria-label',['计算史徽章收藏','Computing history badge collection','مجموعة شارات تاريخ الحوسبة'][idx]);
+    shelf.innerHTML=`<div class="history-track">${historyBadges.map((b,i)=>`<button type="button" class="history-token ${i<level?'is-earned':''}" data-history-index="${i}" aria-label="${esc(b[1])} — ${window.CompassCoverage.format(score)} / ${historyThresholds[i]} ${['探索分','exploration points','نقاط استكشاف'][idx]}" aria-pressed="${i<level}"><img src="${historyImage(b)}" alt="" loading="lazy"></button>`).join('')}</div><div class="history-detail" hidden></div>`;
+    if(level>=11){const replay=document.createElement('button');replay.type='button';replay.className='history-replay';replay.textContent=['重播重要徽章','Replay milestones','إعادة عرض الإنجازات'][idx];replay.addEventListener('click',()=>{if(historyQueueRunning)return;historyCelebrationQueue=[...Array(level-10)].map((_,n)=>({index:10+n,idx}));playHistoryCelebrations();});shelf.append(replay);}
+    shelf.querySelectorAll('[data-history-index]').forEach(btn=>btn.addEventListener('click',()=>{
+      showHistoryBadge(Number(btn.dataset.historyIndex),idx,false,btn);
+    }));
+    if(historyPreviousLevel!==null && level>historyPreviousLevel){
+      if(level<=10)historyPulseStarted.set(level-1,Date.now());
+      for(let i=Math.max(10,historyPreviousLevel);i<level;i++)queueHistoryCelebration(i,idx);
+      playHistoryCelebrations();
+    }
+    if(historyPreviousLevel===null&&level>=11){queueHistoryCelebration(level-1,idx);playHistoryCelebrations();}
+    historyPreviousLevel=level;
+    for(const [i,started] of historyPulseStarted){const elapsed=Date.now()-started;if(elapsed>=1800){historyPulseStarted.delete(i);continue;}const token=shelf.querySelector(`[data-history-index="${i}"]`);if(token&&i<level){token.classList.add('history-just-earned');token.querySelector('img').style.animationDelay=`-${elapsed}ms`;}}
+
+  }
+
+  function queueHistoryCelebration(index,idx){
+    if(!historyCelebrated.has(index)&&!historyCelebrationQueue.some(item=>item.index===index))historyCelebrationQueue.push({index,idx});
+  }
+  async function playHistoryCelebrations(){
+    if(historyQueueRunning||!historyCelebrationQueue.length)return;
+    historyQueueRunning=true;
+    try{while(historyCelebrationQueue.length){const item=historyCelebrationQueue.shift();if(!document.querySelector('#course-radar'))break;historyCelebrated.add(item.index);await showHistoryBadge(item.index,item.idx,true);}}
+    finally{historyQueueRunning=false;historyCelebrationQueue=[];}
+  }
+
+  function showHistoryBadge(index,idx,celebration=false,trigger=null){
+    document.querySelector('.history-modal')?.close();
+    document.querySelector('.history-modal')?.remove();
+    const b=historyBadges[index],dialog=document.createElement('dialog');
+    dialog.className='history-modal'+(celebration?' is-celebration':'');
+    dialog.setAttribute('aria-labelledby','history-modal-title');
+    dialog.dir=language==='ar'?'rtl':'ltr';
+    dialog.innerHTML=`<button type="button" class="history-modal-close" aria-label="${['关闭徽章','Close badge','إغلاق الشارة'][idx]}">×</button><img src="${historyImage(b)}" alt="${esc(b[1])}"><small>${celebration?['新里程碑已解锁','New milestone unlocked','تم فتح إنجاز جديد'][idx]:esc(b[2])}</small><h2 id="history-modal-title" dir="auto">${esc(b[1])}</h2>${celebration?'':`<p>${esc(b[3+idx])}</p><small>${['参考素材的艺术化徽章 · 课程探索成就','Reference-based artwork · Course exploration achievement','عمل فني مستند إلى مراجع · إنجاز استكشاف المقررات'][idx]}</small>`}`;
+    if(!celebration){
+      let current=index;
+      const navigation=document.createElement('nav');
+      navigation.className='history-modal-nav';
+      navigation.dir='ltr';
+      navigation.innerHTML=`<button type="button" data-step="-1" aria-label="${['上一个徽章','Previous badge','الشارة السابقة'][idx]}">‹</button><span aria-live="polite"></span><button type="button" data-step="1" aria-label="${['下一个徽章','Next badge','الشارة التالية'][idx]}">›</button>`;
+      dialog.append(navigation);
+      const update=step=>{
+        current=(current+step+historyBadges.length)%historyBadges.length;
+        const badge=historyBadges[current];
+        const image=dialog.querySelector('img');image.src=historyImage(badge);image.alt=badge[1];
+        dialog.querySelector('small').textContent=badge[2];
+        dialog.querySelector('h2').textContent=badge[1];
+        dialog.querySelector('p').textContent=badge[3+idx];
+        navigation.querySelector('span').textContent=`${current+1} / ${historyBadges.length}`;
+      };
+      navigation.querySelectorAll('button').forEach(button=>button.addEventListener('click',()=>update(Number(button.dataset.step))));
+      dialog.addEventListener('keydown',event=>{
+        if(event.key==='ArrowLeft'||event.key==='ArrowRight'){
+          event.preventDefault();event.stopPropagation();update(event.key==='ArrowLeft'?-1:1);
+        }
+      });
+      update(0);
+    }
+    document.body.append(dialog);
+    let resolveClosed;const closed=new Promise(resolve=>{resolveClosed=resolve;});
+    let timer;
+    dialog.addEventListener('close',()=>{clearTimeout(timer);dialog.remove();if(trigger?.isConnected)trigger.focus({preventScroll:true});resolveClosed();},{once:true});
+    dialog.querySelector('button').addEventListener('click',()=>dialog.close());
+    dialog.addEventListener('click',event=>{if(event.target===dialog){const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();}});
+    dialog.addEventListener('keydown',event=>{if(event.key==='Escape')event.stopPropagation();});
+    dialog.showModal();
+    if(celebration)timer=setTimeout(()=>dialog.close(),3000);
+    return closed;
+  }
+
   function openCourses() {
     radarPreviousCourseCount=learnedCourses.size;
     state.dialog='courses';state.role=null;
@@ -1421,6 +1548,7 @@
       const result=await response.json();if(request!==courseRequest||!box.isConnected)return;
       // New records use links calculated by the same Python engine at export.
       for(const item of bankPreview?.course_matches||[]){
+        if(getRole(item.uid)?.role.skill_groups)continue;
         result.results=result.results.filter(existing=>existing.uid!==item.uid);
         const found=getRole(item.uid);if(!found)continue;
         const links=item.links.filter(link=>learnedCourses.has(link.code));
@@ -1441,28 +1569,47 @@
     persistLearnedCourses();
     const badge=event.target.closest('label').querySelector('strong');
     if(badge)badge.textContent=event.target.checked?courseText('已学','Studied'):'';
-    // Course ticks do not change skill analysis; keep the role panel intact.
+    if(state.dialog==='role')renderLearning();
   });
+  function skillGroupMarkup(role, selected) {
+    const groups=(role.skill_groups||[]).map(g=>({...g}));
+    const used=new Set(groups.flatMap(g=>g.skills));
+    const other=role.skills.filter(s=>!used.has(s));
+    if(other.length)groups.push({id:'other',mode:'unclassified',skills:other,label:{zh:'其他已记录技能 · 要求关系待核实',en:'Other recorded skills · relationship unverified',ar:'مهارات أخرى مسجلة · العلاقة غير متحققة'}});
+    return groups.map(g=>{
+      const count=g.skills.filter(s=>selected.has(s)).length;
+      const any=g.mode==='any',done=any?count>0:count===g.skills.length;
+      const progress=any?(done?100:0):count/g.skills.length*100;
+      const rule=g.mode==='any'?localized({zh:'任意一项',en:'Any one',ar:'واحدة على الأقل'}):g.mode==='all'?localized({zh:'全部需要',en:'All required',ar:'جميعها مطلوبة'}):localized({zh:'技能自评',en:'Self-assessment',ar:'تقييم ذاتي'});
+      const status=done?localized({zh:'已覆盖',en:'Covered',ar:'مغطاة'}):`${count}/${g.skills.length}`;
+      return `<fieldset class="skill-group ${done?'is-covered':''} ${any&&done?'alternative-covered':''}" style="--group-progress:${progress}%"><legend>${esc(localized(g.label))} · ${rule} <span>${status}</span></legend><div class="skills-picker">${g.skills.map(skill=>`<label class="skill-choice"><input type="checkbox" name="mastered" value="${esc(skill)}" ${selected.has(skill)?'checked':''}>${latin(skillName(skill))}${selected.has(skill)&&courseSkills().has(skill)&&!manualSkills.has(skill)?`<small>${localized({zh:'课程关联',en:'Course-linked',ar:'مرتبط بمقرر'})}</small>`:''}</label>`).join('')}</div></fieldset>`;
+    }).join('');
+  }
   let analysisRequest = 0;
   async function renderLearning() {
     const uid=state.role, found=getRole(uid), box=$('#learning-results');
     if(!found||!box)return;
     if(!found.role.skills.length){box.innerHTML=`<strong>${t('noSkills')}</strong><p>${t('noSkillsHelp')}</p>`;return;}
     const request=++analysisRequest;
-    const mastered=[...$('#detail-dialog').querySelectorAll('input[name="mastered"]:checked')].map(i=>i.value);
+    const coursesExpanded=!!box.querySelector('details[open]');
+    const mastered=[...effectiveSkills(found.role)];
     state.mastered[uid]=mastered;
+    const groupBox=$('#skill-groups');
+    if(groupBox)groupBox.innerHTML=skillGroupMarkup(found.role,new Set(mastered));
     box.textContent=language==='zh'?'正在分析…':'Analysing…';
     try {
-      const cached=bankPreview?.plans[uid+'|'+language+'|'+[...mastered].sort().join(',')];
+      const cached=null; // Always use the current Python profile analysis.
+
       let result=cached;
       if(!result){
-        const response=await fetch('/api/analyse',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({uid,mastered,language})});
+        const response=await fetch('/api/analyse',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({uid,mastered:[...manualSkills].filter(s=>found.role.skills.includes(s)),courses:[...learnedCourses],excluded:[...excludedSkills],language})});
         if(!response.ok)throw new Error('Analysis unavailable');
         result=await response.json();
       }
       if(request!==analysisRequest||state.role!==uid||!box.isConnected)return;
       const missing=result.missing, extra=result.unmapped;
-      box.innerHTML=`<h3>${localized({zh:'根据技能差距制定学习建议',en:'Learning suggestions for your skill gaps',ar:'اقتراحات التعلم لفجوات المهارات'})}</h3><p>${localized({zh:'已掌握的技能',en:'Skills you already have',ar:'المهارات التي تمتلكها'})}: ${mastered.length?mastered.map(s=>latin(skillName(s))).join(' · '):'—'}</p><strong>${missing.length?t('remaining',{n:missing.length}):t('allCovered')}</strong><p>${missing.map(s=>latin(skillName(s))).join(' · ')}</p><h4>${localized({zh:'建议学习的课程',en:'Courses to explore next',ar:'دورات للاستكشاف لاحقاً'})}</h4><ul>${result.recommendations.map(rec=>`<li><b>${latin(rec.code)} · ${esc(localized(data.courses[rec.code].name))}</b><br>${rec.reasons.map(esc).join('<br>')}<br><small>${t('courseConditions')}: ${esc(localized(data.courses[rec.code].prerequisite))}</small></li>`).join('')}</ul>${extra.length?`<p>${esc(t('unmapped',{skills:extra.map(skillName).join(', ')}))}</p>`:''}<details><summary>${localized({zh:'查看这个岗位的全部相关课程',en:'View all courses related to this role',ar:'عرض جميع الدورات المرتبطة بهذا الدور'})}</summary><div class="skills-picker">${result.all_courses.map(rec=>courseChoice(rec.code)).join('')||courseText('当前暂无课程映射','No course mapping yet')}</div>${result.all_courses.map(rec=>`<p><b>${esc(rec.code)}</b>: ${rec.reasons.map(esc).join('; ')}</p>`).join('')}<p>${courseText('已学课程与技能自评分别记录。','Studied courses and self-assessed skills are recorded separately.')}</p></details><p>${t('courseCaveat')}</p><button type="button" class="secondary-button" id="download-plan">${language==='zh'?'下载学习计划':'Download learning plan'}</button>`;
+      box.innerHTML=`<h3>${localized({zh:'根据技能差距制定学习建议',en:'Learning suggestions for your skill gaps',ar:'اقتراحات التعلم لفجوات المهارات'})}</h3><p>${localized({zh:'已选技能与课程关联覆盖',en:'Selected skills and course-linked coverage',ar:'المهارات المختارة والتغطية المرتبطة بالمقررات'})}: ${mastered.length?mastered.map(s=>latin(skillName(s))).join(' · '):'—'}</p><strong>${missing.length?t('remaining',{n:missing.length}):t('allCovered')}</strong><p>${missing.map(s=>latin(skillName(s))).join(' · ')}</p><h4>${localized({zh:'建议学习的课程',en:'Courses to explore next',ar:'دورات للاستكشاف لاحقاً'})}</h4><ul>${result.recommendations.map(rec=>`<li><b>${latin(rec.code)} · ${esc(localized(data.courses[rec.code].name))}</b><br>${rec.reasons.map(esc).join('<br>')}<br><small>${t('courseConditions')}: ${esc(localized(data.courses[rec.code].prerequisite))}</small></li>`).join('')}</ul>${extra.length?`<p>${esc(t('unmapped',{skills:extra.map(skillName).join(', ')}))}</p>`:''}<details><summary>${localized({zh:'查看这个岗位的全部相关课程',en:'View all courses related to this role',ar:'عرض جميع الدورات المرتبطة بهذا الدور'})}</summary><div class="skills-picker">${result.all_courses.map(rec=>courseChoice(rec.code)).join('')||courseText('当前暂无课程映射','No course mapping yet')}</div>${result.all_courses.map(rec=>`<p><b>${esc(rec.code)}</b>: ${rec.reasons.map(esc).join('; ')}</p>`).join('')}<p>${courseText('已学课程与技能自评分别记录。','Studied courses and self-assessed skills are recorded separately.')}</p></details><p>${t('courseCaveat')}</p><button type="button" class="secondary-button" id="download-plan">${language==='zh'?'下载学习计划':'Download learning plan'}</button>`;
+      if(coursesExpanded)box.querySelector('details').open=true;
       $('#download-plan').onclick=()=>{
         const url=URL.createObjectURL(new Blob([JSON.stringify(result,null,2)],{type:'application/json'}));
         const link=document.createElement('a');link.href=url;link.download='career_compass_plan.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
@@ -1659,7 +1806,13 @@
     else if(event.target===$('#detail-dialog')){const rect=event.target.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)event.target.close();}
   });
   $('#detail-dialog').addEventListener('input',event=>{if(event.target.id==='catalog-search'){state.catalogQuery=event.target.value;renderCatalogList();}});
-  $('#detail-dialog').addEventListener('change',event=>{if(event.target.matches('input[name="mastered"]'))renderLearning();});
+  $('#detail-dialog').addEventListener('change',event=>{
+    if(!event.target.matches('input[name="mastered"]'))return;
+    const skill=event.target.value;
+    if(event.target.checked){manualSkills.add(skill);excludedSkills.delete(skill);}
+    else {manualSkills.delete(skill);excludedSkills.add(skill);}
+    persistSkillProfile();renderLearning();
+  });
   new ResizeObserver(()=>applyView()).observe(svg);
   document.addEventListener('click',event=>{const button=event.target.closest('[data-language]');if(button)setLanguage(button.dataset.language);});
   $('#detail-dialog').addEventListener('close',()=>{state.dialog=null;if(deferredLanguageRefresh){deferredLanguageRefresh=false;renderStaticUI();updateMapState();renderMarkers();renderPanel();applyView();}});

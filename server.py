@@ -28,10 +28,22 @@ def analyse(payload):
             if role['uid'] == uid:
                 if any(skill not in role['skills'] for skill in mastered):
                     raise ValueError('Unknown skill for this role')
+                courses = payload.get('courses', [])
+                excluded = payload.get('excluded', [])
+                if not isinstance(courses, list) or any(not isinstance(c, str) or c not in core.COURSES for c in courses):
+                    raise ValueError('Unknown course')
+                if not isinstance(excluded, list) or not all(isinstance(s, str) for s in excluded):
+                    raise ValueError('Invalid excluded skills')
+                linked = [skill for skill in role['skills'] if any(code in courses
+                          for code, reason in core.SKILL_COURSES.get(skill, []))]
+                mastered = [skill for skill in role['skills']
+                            if skill not in excluded and (skill in mastered or skill in linked)]
                 missing = core.get_missing_skills(role, mastered)
                 recommendations, unmapped = core.recommend_courses(missing, language)
                 return {'uid': uid, 'company': company['name'], 'title': role['title'],
                         'mastered': mastered, 'missing': missing,
+                        'course_linked': [s for s in linked if s not in excluded],
+                        'skill_groups': core.evaluate_skill_groups(role, mastered),
                         'recommendations': recommendations, 'unmapped': unmapped,
                         'all_courses': core.recommend_courses(role['skills'], language)[0],
                         'source_url': role.get('source_url'), 'engine': 'Python'}
@@ -82,8 +94,9 @@ def course_matches(payload):
             if links:
                 covered = {link['skill'] for link in links}
                 results.append({'uid': role['uid'], 'links': links,
-                    'covered_count': len(covered), 'total': len(role['skills']),
-                    'remaining': [skill for skill in role['skills'] if skill not in covered]})
+                    'covered_count': sum(g['covered'] for g in core.evaluate_skill_groups(role, covered)),
+                    'total': sum(g['total'] for g in core.evaluate_skill_groups(role, covered)),
+                    'remaining': core.get_missing_skills(role, covered)})
     results.sort(key=lambda item: (-item['covered_count'], item['uid']))
     return {'results': results, 'engine': 'Python'}
 

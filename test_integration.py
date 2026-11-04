@@ -8,6 +8,54 @@ import career_compass as core
 from server import analyse, course_matches, compute_stats
 
 class IntegrationTests(unittest.TestCase):
+    def test_course_profile_and_manual_override(self):
+        uid='bytedance-A50094'
+        linked=analyse({'uid':uid,'courses':['COMP9001']})
+        self.assertIn('Python', linked['mastered'])
+        self.assertNotIn('Java', linked['missing'])
+        overridden=analyse({'uid':uid,'courses':['COMP9001'],'excluded':['Python']})
+        self.assertNotIn('Python', overridden['mastered'])
+        removed=analyse({'uid':uid,'courses':[]})
+        self.assertIn('Python', removed['missing'])
+        manual=analyse({'uid':uid,'courses':[],'mastered':['Python']})
+        self.assertIn('Python', manual['mastered'])
+
+    def test_requirement_groups_or_and_partial(self):
+        role = {'skills': ['Python', 'Java', 'SQL', 'Networking'], 'skill_groups': [
+            {'id': 'language', 'mode': 'any', 'skills': ['Python', 'Java']},
+            {'id': 'foundation', 'mode': 'all', 'skills': ['SQL', 'Networking']}]}
+        groups = core.evaluate_skill_groups(role, ['Python', 'SQL'])
+        self.assertEqual(groups[0]['progress'], 1)
+        self.assertEqual(groups[0]['selected'], ['Python'])
+        self.assertEqual(groups[1]['progress'], .5)
+        self.assertEqual(core.get_missing_skills(role, ['Python', 'SQL']), ['Networking'])
+        self.assertEqual(core.get_missing_skills(role, ['Python', 'SQL', 'Networking']), [])
+        self.assertFalse(core.evaluate_skill_groups(role, [])[0]['satisfied'])
+
+    def test_comp9121_network_course_mapping(self):
+        self.assertEqual(core.COURSES['COMP9121']['level'], 'PG')
+        self.assertNotIn('COMP9101', core.COURSES)
+        courses, _ = core.recommend_courses(['Distributed Systems'], 'en')
+        self.assertIn('COMP9121', [c['code'] for c in courses])
+        self.assertNotIn('COMP9101', [c['code'] for c in courses])
+        courses, _ = core.recommend_courses(['Computer Networks'], 'en')
+        self.assertIn('COMP9121', [c['code'] for c in courses])
+        self.assertIsInstance(course_matches({'courses': ['COMP9121']})['results'], list)
+
+    def test_google_replacement_shared_with_python_analysis(self):
+        company = next(c for c in core.DATA['companies'] if c['id'] == 'google')
+        role = company['roles'][0]
+        self.assertEqual(role['uid'], 'google-93321386079986374')
+        self.assertEqual(role['experience']['type'], 'experienced')
+        result = analyse({'uid': role['uid'], 'mastered': ['Python']})
+        self.assertEqual(result['title'], role['title'])
+        self.assertNotIn('Python', result['missing'])
+        self.assertNotIn('Java', result['missing'])
+        self.assertTrue(result['skill_groups'][0]['satisfied'])
+        self.assertEqual(result['source_url'], role['source_url'])
+        with self.assertRaises(ValueError):
+            analyse({'uid': 'google-d4f7270dda'})
+
     def test_displayed_role_locations_include_shanghai(self):
         for company in core.DATA["companies"]:
             for role in company["roles"]:

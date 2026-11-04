@@ -242,20 +242,41 @@ def find_role(industry_id, role_id):
     return None
 
 
-def get_missing_skills(role, mastered_skills):
-    """Return the role's required skills that the user does not master.
+def skill_groups(role):
+    """Explicit source-backed groups; unclassified skills stay unclassified."""
+    groups = [dict(group) for group in role.get("skill_groups", [])]
+    used = {skill for group in groups for skill in group["skills"]}
+    other = [skill for skill in role["skills"] if skill not in used]
+    if other:
+        groups.append({"id": "other", "mode": "unclassified", "skills": other,
+                       "label": {"en": "Other recorded skills · relationship unverified",
+                                 "zh": "其他已记录技能 · 要求关系待核实",
+                                 "ar": "مهارات أخرى مسجلة · العلاقة غير متحققة"}})
+    return groups
 
-    This is the core gap-analysis algorithm: required skills minus
-    existing skills, keeping the order of the requirement list. Both sides
-    are normalised so that a Chinese alias (e.g. "机器学习") matches its
-    canonical English key ("Machine Learning").
-    """
+
+def evaluate_skill_groups(role, mastered_skills):
+    """OR counts once; AND counts each member. Never claim mastery of alternatives."""
     mastered = {normalize_skill(s) for s in mastered_skills}
-    missing = []
-    for skill in role["skills"]:
-        if skill not in mastered:
-            missing.append(skill)
-    return missing
+    results = []
+    for group in skill_groups(role):
+        selected = [s for s in group["skills"] if s in mastered]
+        any_mode = group["mode"] == "any"
+        total = 1 if any_mode else len(group["skills"])
+        covered = int(bool(selected)) if any_mode else len(selected)
+        results.append(dict(group, selected=selected, covered=covered, total=total,
+                            satisfied=covered == total,
+                            progress=covered / total if total else 0,
+                            missing=[] if any_mode and selected else
+                            [s for s in group["skills"] if s not in mastered]))
+    return results
+
+
+def get_missing_skills(role, mastered_skills):
+    """Exclude unselected alternatives when their OR group is already covered."""
+    needed = {s for group in evaluate_skill_groups(role, mastered_skills)
+              for s in group["missing"]}
+    return [s for s in role["skills"] if s in needed]
 
 
 def recommend_courses(skills, lang):

@@ -70,9 +70,11 @@ opportunities, eligibility and experiences vary.
   Dishui Lake focuses on the lake and plays a fireworks Easter egg.
 - Open role details, including recorded skills and links to sources.
 - Select university courses to find roles related to their mapped skills.
-- The six-direction course profile visualises course coverage, with a
-  "Hexagon Ranger" milestone for reaching its coverage thresholds; it is an
-  exploration feature, not a professional skills certification.
+- The six-direction radar visualises course exploration alongside 13 computing-history
+  badges. Each course contributes at most one point across its related directions.
+  Badge details support previous/next buttons and keyboard arrows. AGI, ASI and
+  The Singularity Is Near are future narratives, not completed historical events.
+  Exploration points are not a professional skills certification.
 - Mark self-reported skills for a role and receive a skill-gap analysis and
   related course suggestions. A match is not proof of competence or eligibility.
 - Explore the interface in Chinese, English or Arabic; the terminal interface
